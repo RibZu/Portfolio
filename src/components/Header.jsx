@@ -10,12 +10,25 @@ const links = [
   { id: 'contact', label: ui.navContact },
 ];
 
+// Sección activa: la última cuyo borde superior ya pasó el tercio superior de la ventana.
+// Al llegar al final de la página gana la última, aunque sea demasiado corta para alcanzar ese punto.
+function currentSection(scrollY) {
+  const atBottom = scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+  if (atBottom) return links[links.length - 1].id;
+  let current = null;
+  links.forEach(({ id }) => {
+    const section = document.getElementById(id);
+    if (section && section.getBoundingClientRect().top <= window.innerHeight * 0.35) current = id;
+  });
+  return current;
+}
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState(null);
   const headerRef = useRef(null);
 
-  // El mapa avanza con el scroll y la cota inferior se rellena con el progreso de lectura.
+  // El mapa avanza con el scroll, la cota inferior se rellena con el progreso y se marca la sección activa.
   useEffect(() => {
     const el = headerRef.current;
     if (!el) return undefined;
@@ -27,6 +40,7 @@ export default function Header() {
       const y = window.scrollY;
       const max = document.documentElement.scrollHeight - window.innerHeight;
       el.style.setProperty('--progress', max > 0 ? Math.min(1, Math.max(0, y / max)).toFixed(4) : '0');
+      setActiveId(currentSection(y));
       if (!reduceMotion) {
         el.style.setProperty('--map-far', `${(-y * 0.3).toFixed(1)}px`);
         el.style.setProperty('--map-near', `${(-y * 0.75).toFixed(1)}px`);
@@ -43,34 +57,6 @@ export default function Header() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
       if (frame) cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  // Sección visible: la que cruza el tercio superior de la ventana.
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveId(entry.target.id);
-        });
-      },
-      { rootMargin: '-30% 0px -65% 0px' },
-    );
-    links.forEach(({ id }) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
-    const hero = document.getElementById('hero');
-    const heroObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setActiveId(null);
-      },
-      { rootMargin: '-30% 0px -65% 0px' },
-    );
-    if (hero) heroObserver.observe(hero);
-    return () => {
-      observer.disconnect();
-      heroObserver.disconnect();
     };
   }, []);
 
