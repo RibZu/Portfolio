@@ -12,7 +12,7 @@ export function ProjectCard({ project, onJump }) {
   const related = project.relatedTo ? projects.find((p) => p.id === project.relatedTo) : null;
 
   return (
-    <article id={`project-${project.id}`} className={styles.sheet}>
+    <article id={`project-${project.id}`} className={`sheet ${styles.sheet}`}>
       <div className={styles.body}>
         <h3 className={styles.title}>{project.name}</h3>
         <p className={styles.description}>{t(project.description)}</p>

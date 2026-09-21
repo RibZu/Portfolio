@@ -87,3 +87,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-inline: var(--spacing-3);
   }
 }
+
+/* Lámina: superficie común de Proyectos, Habilidades y Contacto */
+.sheet {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sheet);
+}

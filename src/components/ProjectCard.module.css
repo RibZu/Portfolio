@@ -1,9 +1,6 @@
 .sheet {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--sheet);
   scroll-margin-top: 7rem;
   transition: border-color 0.15s ease;
 }

@@ -29,6 +29,10 @@ export const ui = {
   sheetOpenRepo: { es: "Repositorio", en: "Repository" },
   sheetOpenDemo: { es: "Abrir", en: "Open" },
 
+  skillGroupLanguages: { es: "Lenguajes", en: "Languages" },
+  skillGroupTools: { es: "Herramientas", en: "Tools" },
+  skillGroupDatabases: { es: "Bases de datos", en: "Databases" },
+
   backgroundMeta: {
     es: (from) => `Desde ${from}`,
     en: (from) => `Since ${from}`,
