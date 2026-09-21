@@ -2,16 +2,33 @@
   position: sticky;
   top: 20px;
   z-index: 1000;
-  background-color: rgba(29, 45, 61, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--border, #2a2b36);
   border-radius: 50px;
   margin: 0 auto 20px auto;
   max-width: 800px;
   padding: var(--spacing-3) 0;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   transition: border-radius 0.3s ease;
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: -20px; /* negative inset to prevent blur edges from showing */
+  background-image: url('../assets/japanese-art-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -2;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--glass-bg, rgba(15, 16, 21, 0.6));
+  z-index: -1;
 }
 
 .container {
