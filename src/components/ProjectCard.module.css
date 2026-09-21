@@ -12,23 +12,14 @@
   border-color: var(--ink);
 }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-bottom: 1px solid var(--line);
-}
-
 .body {
   flex: 1;
-  padding: var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-4);
 }
 
 .title {
   margin: 0 0 var(--spacing-2);
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   line-height: 1.05;
   color: var(--ink);
 }

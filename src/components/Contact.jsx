@@ -17,12 +17,7 @@ export default function Contact() {
   return (
     <section id="contact" className="block" aria-labelledby="contact-title">
       <div className="container">
-        <SectionHead
-          id="contact-title"
-          title={t(ui.headingContact)}
-          meta={t(ui.contactMeta)}
-        />
-        <p className={styles.lead}>{t(ui.contactLead)}</p>
+        <SectionHead id="contact-title" title={t(ui.headingContact)} />
         <ul className={styles.channels}>
           {channels.map((channel) => (
             <li key={channel.label}>

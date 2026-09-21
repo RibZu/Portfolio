@@ -6,6 +6,7 @@
 }
 
 html {
+  font-size: 87.5%;
   scroll-behavior: smooth;
 }
 
@@ -48,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Layout Utilities */
 .container {
-  max-width: 1120px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 var(--spacing-5);
 }
@@ -60,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Secciones del sitio bajo el Hero: mismo ritmo vertical en todas */
 .block {
-  padding-block: clamp(4rem, 9vw, 7rem);
+  padding-block: clamp(3rem, 7vw, 5rem);
   scroll-margin-top: 5.5rem;
 }
 

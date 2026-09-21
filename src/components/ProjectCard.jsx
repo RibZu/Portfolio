@@ -13,16 +13,6 @@ export function ProjectCard({ project, onJump }) {
 
   return (
     <article id={`project-${project.id}`} className={styles.sheet}>
-      {project.image && (
-        <img
-          src={project.image}
-          alt={project.name}
-          width={project.imageWidth}
-          height={project.imageHeight}
-          className={styles.image}
-          loading="lazy"
-        />
-      )}
       <div className={styles.body}>
         <h3 className={styles.title}>{project.name}</h3>
         <p className={styles.description}>{t(project.description)}</p>

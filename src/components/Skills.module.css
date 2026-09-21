@@ -1,63 +1,28 @@
+/* Una tabla de una fila: cada tecnología ocupa una celda */
 .list {
-  list-style: none;
-  border-bottom: 1px solid var(--line);
-}
-
-.row {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 8rem;
-  align-items: center;
-  gap: var(--spacing-5);
-  padding-block: var(--spacing-4);
-  border-top: 1px solid var(--line);
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sheet);
 }
 
-.name {
-  margin: 0 0 var(--spacing-1);
-  font-size: 2.25rem;
-  line-height: 1;
+.cell {
+  padding: var(--spacing-3) var(--spacing-4);
   color: var(--ink);
+  font-family: var(--font-family-display);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  border-left: 1px solid var(--line-soft);
 }
 
-.blurb {
-  max-width: 46ch;
-  color: var(--ink-2);
-  font-size: 0.9375rem;
-  line-height: 1.5;
+.cell:first-child {
+  border-left: 0;
 }
 
-/* Escala: línea base con marcas de altura variable */
-.ruler {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 1.75rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.tick {
-  width: 1px;
-  height: 0.5rem;
-  background: var(--line);
-}
-
-.tickUsed {
-  height: 100%;
-  width: 2px;
-  background: var(--ink);
-}
-
-.status {
-  color: var(--ink);
-  font-size: 0.9375rem;
-  font-variant-numeric: tabular-nums;
-  text-align: right;
-}
-
-@media (max-width: 760px) {
-  .row {
-    grid-template-columns: 1fr auto;
-    gap: var(--spacing-3);
-  }
-  .who { grid-column: 1 / -1; }
+@media (max-width: 640px) {
+  .cell:nth-child(n + 3) { border-top: 1px solid var(--line-soft); }
+  .cell:nth-child(odd) { border-left: 0; }
 }

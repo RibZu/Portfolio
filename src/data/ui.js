@@ -29,17 +29,6 @@ export const ui = {
   sheetOpenRepo: { es: "Repositorio", en: "Repository" },
   sheetOpenDemo: { es: "Abrir", en: "Open" },
 
-  skillsMeta: {
-    es: (n) => `${n} tecnologías`,
-    en: (n) => `${n} technologies`,
-  },
-  skillLearning: { es: "En aprendizaje", en: "Learning" },
-  skillUsedIn: {
-    es: (names) => `Usada en: ${names}`,
-    en: (names) => `Used in: ${names}`,
-  },
-  skillNoProject: { es: "Todavía sin proyecto propio", en: "No project of my own yet" },
-
   backgroundMeta: {
     es: (from) => `Desde ${from}`,
     en: (from) => `Since ${from}`,
@@ -49,10 +38,5 @@ export const ui = {
   certificationsTitle: { es: "Certificaciones", en: "Certifications" },
   linkedinFull: { es: "Ver el perfil completo en LinkedIn", en: "See the full profile on LinkedIn" },
 
-  contactMeta: { es: "San Luis, Argentina", en: "San Luis, Argentina" },
   contactEmail: { es: "Email", en: "Email" },
-  contactLead: {
-    es: "Escribime y te respondo.",
-    en: "Send me a message and I will reply.",
-  },
 };
