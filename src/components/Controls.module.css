@@ -6,11 +6,11 @@
   padding: 0.75rem 1rem 0;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1300px) {
   .controls {
     position: fixed;
     /* centrados en vertical con el header: top del header + (alto del header - alto del botón) / 2 */
-    top: 2.5rem;
+    top: 2rem;
     right: 1.5rem;
     z-index: 999;
     padding: 0;
