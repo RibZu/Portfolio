@@ -8,9 +8,12 @@ import SectionHead from './SectionHead.jsx';
 import styles from './Background.module.css';
 
 const sorted = sortExperience(experience);
-const mainEntries = sorted.filter((e) => e.type !== 'certification');
+// La cronología muestra solo los tres trabajos más recientes; el resto se lee en LinkedIn.
+const TIMELINE_LIMIT = 3;
+const mainEntries = sorted.filter((e) => e.type === 'work').slice(0, TIMELINE_LIMIT);
+const degreeEntries = sorted.filter((e) => e.degree);
 const certEntries = sorted.filter((e) => e.type === 'certification');
-const firstYear = Math.min(...experience.map((e) => Number(e.period.from)));
+const firstYear = Math.min(...mainEntries.map((e) => Number(e.period.from)));
 
 export default function Background() {
   return (
@@ -65,6 +68,21 @@ export default function Background() {
                   </div>
                 ))}
               </dl>
+            </section>
+
+            <section>
+              <h3 className={styles.sideTitle}>{t(ui.degreesTitle)}</h3>
+              <ul className={styles.certs}>
+                {degreeEntries.map((entry) => (
+                  <li key={entry.id} className={styles.cert}>
+                    <span className={styles.certYear}>{entry.period.to ?? entry.period.from}</span>
+                    <span>
+                      {t(entry.role)}
+                      <span className={styles.certOrg}>{entry.organisation}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </section>
 
             <section>

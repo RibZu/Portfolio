@@ -6,11 +6,13 @@ import { t } from '../lib/content.js';
 import SectionHead from './SectionHead.jsx';
 import styles from './Skills.module.css';
 
-// Los grupos salen de la categoría de cada tecnología, así agregar una skill no requiere tocar el diseño.
-const groups = [
-  { id: 'languages', title: ui.skillGroupLanguages, categories: ['language'] },
-  { id: 'tools', title: ui.skillGroupTools, categories: ['framework', 'platform', 'tooling'] },
-  { id: 'databases', title: ui.skillGroupDatabases, categories: ['database'] },
+// Las tecnologías se agrupan por lo que hacen, en palabras que entiende quien no programa.
+const layers = [
+  { id: 'frontend', title: ui.skillFrontTitle, hint: ui.skillFrontHint },
+  { id: 'backend', title: ui.skillBackTitle, hint: ui.skillBackHint },
+  { id: 'data', title: ui.skillDataTitle, hint: ui.skillDataHint },
+  { id: 'mobile', title: ui.skillMobileTitle, hint: ui.skillMobileHint },
+  { id: 'tools', title: ui.skillToolsTitle, hint: ui.skillToolsHint },
 ];
 
 const orderedSkills = [...skills]
@@ -24,12 +26,15 @@ export default function Skills() {
       <div className="container">
         <SectionHead id="skills-title" title={t(ui.headingSkills)} />
         <div className={styles.grid}>
-          {groups.map((group) => {
-            const items = orderedSkills.filter((tech) => group.categories.includes(tech.category));
+          {layers.map((layer) => {
+            const items = orderedSkills.filter((tech) => tech.layer === layer.id);
             if (items.length === 0) return null;
             return (
-              <article key={group.id} className={`sheet ${styles.group}`}>
-                <h3 className={styles.title}>{t(group.title)}</h3>
+              <article key={layer.id} className={`sheet ${styles.group}`}>
+                <header className={styles.header}>
+                  <h3 className={styles.title}>{t(layer.title)}</h3>
+                  <p className={styles.hint}>{t(layer.hint)}</p>
+                </header>
                 <ul className={styles.list}>
                   {items.map((tech) => (
                     <li key={tech.id} className={styles.item}>{tech.name}</li>

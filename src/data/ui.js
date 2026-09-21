@@ -29,9 +29,16 @@ export const ui = {
   sheetOpenRepo: { es: "Repositorio", en: "Repository" },
   sheetOpenDemo: { es: "Abrir", en: "Open" },
 
-  skillGroupLanguages: { es: "Lenguajes", en: "Languages" },
-  skillGroupTools: { es: "Herramientas", en: "Tools" },
-  skillGroupDatabases: { es: "Bases de datos", en: "Databases" },
+  skillFrontTitle: { es: "Lo que ve el usuario", en: "What users see" },
+  skillFrontHint: { es: "Páginas y aplicaciones web", en: "Web pages and apps" },
+  skillBackTitle: { es: "Lo que funciona detrás", en: "What runs behind the scenes" },
+  skillBackHint: { es: "Servidores y lógica del sistema", en: "Servers and system logic" },
+  skillDataTitle: { es: "Donde se guarda la información", en: "Where information is stored" },
+  skillDataHint: { es: "Bases de datos", en: "Databases" },
+  skillMobileTitle: { es: "Apps para celular", en: "Phone apps" },
+  skillMobileHint: { es: "Aplicaciones móviles", en: "Mobile applications" },
+  skillToolsTitle: { es: "Herramientas", en: "Tools" },
+  skillToolsHint: { es: "Para publicar y mantener el sistema", en: "To publish and maintain the system" },
 
   backgroundMeta: {
     es: (from) => `Desde ${from}`,
@@ -39,8 +46,9 @@ export const ui = {
   },
   present: { es: "Presente", en: "Present" },
   languagesTitle: { es: "Idiomas", en: "Languages" },
+  degreesTitle: { es: "Títulos", en: "Degrees" },
   certificationsTitle: { es: "Certificaciones", en: "Certifications" },
-  linkedinFull: { es: "Ver el perfil completo en LinkedIn", en: "See the full profile on LinkedIn" },
+  linkedinFull: { es: "Si querés saber más, buscame en LinkedIn", en: "To know more, find me on LinkedIn" },
 
   contactEmail: { es: "Email", en: "Email" },
 };

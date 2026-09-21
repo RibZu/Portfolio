@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--spacing-4);
+  align-items: start;
 }
 
 @media (min-width: 760px) {
@@ -11,17 +12,21 @@
   }
 }
 
-.group {
-  display: flex;
-  flex-direction: column;
+.header {
+  padding: var(--spacing-3) var(--spacing-4);
 }
 
 .title {
   margin: 0;
-  padding: var(--spacing-3) var(--spacing-4);
   font-size: 1.5rem;
-  line-height: 1.05;
+  line-height: 1.1;
   color: var(--ink);
+}
+
+.hint {
+  margin-top: 0.15rem;
+  color: var(--ink-2);
+  font-size: 0.875rem;
 }
 
 .list {

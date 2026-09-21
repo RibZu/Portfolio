@@ -27,6 +27,7 @@ export const experience = [
   {
     id: "tecnicatura",
     type: "education",
+    degree: true,
     role: { es: "Técnico Universitario en Web", en: "University Web Technician" },
     organisation: "Universidad Nacional de San Luis",
     period: { from: "2024", to: "2026" },
