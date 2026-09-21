@@ -2,8 +2,16 @@
 .map {
   display: block;
   width: 100%;
+  max-width: 800px;
   height: auto;
+  margin-inline: auto;
   overflow: visible;
+}
+
+@media (max-width: 719px) {
+  .map {
+    max-width: 330px;
+  }
 }
 
 .star {
