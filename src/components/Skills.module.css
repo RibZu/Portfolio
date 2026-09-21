@@ -1,163 +1,110 @@
-/* Diagrama: láminas conectadas por flechas de pedido y respuesta */
-.flow {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
+/*
+ * Cadena de cotas. Cada <li> es un tramo:
+ *  - borde izquierdo = línea de referencia (sobresale de la línea de cota)
+ *  - ::after = línea de cota
+ *  - ::before = marca oblicua en la unión
+ */
+.chain {
+  --dim-offset: 1rem; /* distancia de la línea de cota al borde inferior */
+  --tick: 0.9rem;
 
-@media (min-width: 760px) {
-  .flow {
-    flex-direction: row;
-  }
-}
-
-.node {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-.header {
-  padding: var(--spacing-3) var(--spacing-4);
-  border-bottom: 1px solid var(--line);
-}
-
-.title {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.15;
-  color: var(--ink);
-}
-
-.hint {
-  margin-top: 0.15rem;
-  color: var(--ink-2);
-  font-size: 0.875rem;
-}
-
-.list {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
   list-style: none;
-  padding: var(--spacing-3) var(--spacing-4) var(--spacing-4);
+  padding-top: var(--spacing-3);
 }
 
-.item {
+.span {
+  position: relative;
+  padding: 1.5rem 0.5rem 2.5rem;
+  border-left: 1px solid var(--line);
   color: var(--ink);
   font-family: var(--font-family-display);
-  font-size: 2rem;
-  line-height: 1.25;
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  line-height: 1;
+  text-align: center;
   text-transform: uppercase;
 }
 
-/* Conector */
-.link {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: var(--spacing-5);
-  height: 5rem;
+.span:last-child {
+  border-right: 1px solid var(--line);
 }
 
-.arrow {
-  position: relative;
-  display: block;
-  width: 4.5rem;
-  height: 100%;
-  color: var(--ink);
-}
-
-.arrow em {
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 0.6rem);
-  transform: translateY(-50%);
-  color: var(--ink-2);
-  font-size: 0.8125rem;
-  font-style: normal;
-}
-
-/* Vertical (móvil): línea central y punta abajo o arriba */
-.arrow::before {
+.span::after {
   content: '';
   position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--dim-offset);
+  height: 1px;
+  background: var(--line);
+}
+
+/* Marca oblicua centrada sobre la unión */
+.span::before,
+.chain::after {
+  content: '';
+  position: absolute;
+  bottom: calc(var(--dim-offset) - var(--tick) / 2);
   width: 1px;
-  background: currentColor;
+  height: var(--tick);
+  background: var(--ink);
+  transform: rotate(45deg);
 }
 
-.arrow::after {
-  content: '';
-  position: absolute;
-  left: calc(50% - 4.5px);
-  border-left: 4.5px solid transparent;
-  border-right: 4.5px solid transparent;
+.span::before { left: -1px; }
+.chain::after { right: -1px; }
+
+.span:hover::after {
+  height: 2px;
+  background: var(--mark);
 }
 
-.arrowForward::after {
-  bottom: 0;
-  border-top: 7px solid currentColor;
-}
-
-.arrowBack::after {
-  top: 0;
-  border-bottom: 7px solid currentColor;
-}
-
-/* Horizontal (escritorio): dos flechas apiladas entre láminas */
-@media (min-width: 760px) {
-  .link {
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    gap: var(--spacing-2);
-    width: 9rem;
-    height: auto;
-    flex: none;
+/* Móvil: la cadena se vuelve vertical */
+@media (max-width: 759px) {
+  .chain {
+    grid-auto-flow: row;
+    padding-top: 0;
   }
 
-  .arrow {
-    width: 100%;
-    height: 2.25rem;
-  }
-
-  .arrow em {
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    transform: none;
-  }
-
-  .arrow::before {
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 0.6rem;
-    width: auto;
-    height: 1px;
-  }
-
-  .arrow::after {
-    top: auto;
-    bottom: calc(0.6rem - 4px);
-    border-top: 4.5px solid transparent;
-    border-bottom: 4.5px solid transparent;
+  .span {
+    padding: 1.1rem 0 1.1rem 2.75rem;
     border-left: 0;
+    border-top: 1px solid var(--line);
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .span:last-child {
     border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
 
-  .arrowForward::after {
-    left: auto;
-    right: 0;
-    border-left: 7px solid currentColor;
-  }
-
-  .arrowBack::after {
-    left: 0;
+  .span::after {
+    left: 1rem;
     right: auto;
-    top: auto;
-    border-right: 7px solid currentColor;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+  }
+
+  .span:hover::after {
+    width: 2px;
+    height: auto;
+  }
+
+  .span::before {
+    left: calc(1rem - 0.5px);
+    top: calc(var(--tick) / -2);
+    bottom: auto;
+  }
+
+  .chain::after {
+    left: calc(1rem - 0.5px);
+    right: auto;
+    bottom: calc(var(--tick) / -2);
   }
 }

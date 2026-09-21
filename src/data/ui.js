@@ -29,18 +29,6 @@ export const ui = {
   sheetOpenRepo: { es: "Repositorio", en: "Repository" },
   sheetOpenDemo: { es: "Abrir", en: "Open" },
 
-  skillFrontTitle: { es: "Lo que ve el usuario", en: "What users see" },
-  skillFrontHint: { es: "Páginas y aplicaciones web", en: "Web pages and apps" },
-  skillBackTitle: { es: "Lo que funciona detrás", en: "What runs behind the scenes" },
-  skillBackHint: { es: "Servidores y lógica del sistema", en: "Servers and system logic" },
-  skillDataTitle: { es: "Donde se guarda la información", en: "Where information is stored" },
-  skillDataHint: { es: "Bases de datos", en: "Databases" },
-  skillMobileTitle: { es: "Apps para celular", en: "Phone apps" },
-  skillMobileHint: { es: "Aplicaciones móviles", en: "Mobile applications" },
-  skillAsks: { es: "Pide", en: "Asks" },
-  skillReplies: { es: "Responde", en: "Replies" },
-  skillToolsTitle: { es: "Herramientas", en: "Tools" },
-  skillToolsHint: { es: "Para publicar y mantener el sistema", en: "To publish and maintain the system" },
 
   present: { es: "Presente", en: "Present" },
   languagesTitle: { es: "Idiomas", en: "Languages" },
