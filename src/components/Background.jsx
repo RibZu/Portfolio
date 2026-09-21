@@ -5,15 +5,17 @@ import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
 import { sortExperience } from '../lib/derive.js';
 import { currentLanguage } from '../lib/language.js';
+import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import styles from './Background.module.css';
 
 export default function Background() {
+  const revealRef = useScrollReveal();
   const sorted = sortExperience(experience);
   const langTitle = currentLanguage === 'es' ? 'Idiomas' : 'Languages';
   const presentText = currentLanguage === 'es' ? 'Presente' : 'Present';
   
   return (
-    <section id="background" className="section">
+    <section id="background" className="section reveal-hidden" ref={revealRef}>
       <div className="container">
         <div className={styles.header}>
           <h2 className="section-title" style={{marginBottom: 0}}>{t(ui.headingBackground)}</h2>

@@ -1,12 +1,15 @@
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import { profile } from '../data/profile.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const revealRef = useScrollReveal();
+
   return (
-    <section id="contact" className={`section ${styles.contactSection}`}>
+    <section id="contact" className={`section ${styles.contactSection} reveal-hidden`} ref={revealRef}>
       <div className="container">
         <h2 className={`section-title ${styles.title}`}>{t(ui.headingContact)}</h2>
         <div className={styles.content}>

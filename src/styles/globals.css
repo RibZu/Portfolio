@@ -64,3 +64,14 @@ h1, h2, h3, h4, h5, h6 {
   outline: 3px solid var(--color-accent-light);
   outline-offset: 2px;
 }
+/* Scroll Reveal Utilities */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

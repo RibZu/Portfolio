@@ -1,4 +1,5 @@
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import { skills } from '../data/profile.js';
 import { technologies } from '../data/technologies.js';
 import { projects } from '../data/projects.js';
@@ -8,8 +9,10 @@ import { isDemonstrated } from '../lib/derive.js';
 import styles from './Skills.module.css';
 
 export default function Skills() {
+  const revealRef = useScrollReveal();
+
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section reveal-hidden" ref={revealRef}>
       <div className="container">
         <h2 className="section-title">{t(ui.headingSkills)}</h2>
         <ul className={styles.skillsGrid}>

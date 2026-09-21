@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import { projects } from '../data/projects.js';
 import { technologies } from '../data/technologies.js';
 import { ui } from '../data/ui.js';
@@ -10,13 +11,14 @@ import styles from './Projects.module.css';
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState(null);
+  const revealRef = useScrollReveal();
   
   const counts = technologyCounts(projects);
   const visibleTechs = visibleFilters(projects, technologies);
   const filteredProjects = filterProjects(projects, activeFilter);
 
   return (
-    <section id="projects" className={styles.sectionProjects}>
+    <section id="projects" className={`${styles.sectionProjects} reveal-hidden`} ref={revealRef}>
       <h2>{t(ui.headingProjects || ui.navProjects)}</h2>
       
       <TechFilter 

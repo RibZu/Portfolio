@@ -6,11 +6,80 @@
   min-height: 80vh;
 }
 
-.content {
+.splitContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .splitContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+.leftColumn {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 800px;
+}
+
+.rightColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.visualContainer {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.abstractSvg {
+  width: 100%;
+  height: auto;
+}
+
+.svgFloat1 {
+  animation: float 6s ease-in-out infinite;
+}
+
+.svgFloat2 {
+  animation: float 5s ease-in-out infinite reverse;
+}
+
+.svgPulse {
+  animation: pulse 3s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svgFloat1, .svgFloat2, .svgPulse {
+    animation: none;
+  }
 }
 
 .title {
