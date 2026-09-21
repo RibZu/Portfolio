@@ -1,0 +1,21 @@
+export const ui = {
+  navProjects: { es: "Proyectos", en: "Projects" },
+  navSkills: { es: "Habilidades", en: "Skills" },
+  navBackground: { es: "Experiencia", en: "Background" },
+  navContact: { es: "Contacto", en: "Contact" },
+  headingProjects: { es: "Proyectos", en: "Projects" },
+  headingSkills: { es: "Habilidades", en: "Skills" },
+  headingBackground: { es: "Experiencia", en: "Background" },
+  headingContact: { es: "Contacto", en: "Contact" },
+  filterAll: { es: "Todas", en: "All" },
+  filterGroupLabel: { es: "Filtrar por tecnología", en: "Filter by technology" },
+  filterEmpty: { es: "No hay proyectos con esta tecnología.", en: "No projects use this technology." },
+  resultCount: {
+    es: (n) => `${n} ${n === 1 ? "proyecto" : "proyectos"}`,
+    en: (n) => `${n} ${n === 1 ? "project" : "projects"}`,
+  },
+  externalLink: { es: "(se abre en una pestaña nueva)", en: "(opens in a new tab)" },
+  languageSwitch: { es: "English", en: "Español" },
+  sourceCode: { es: "Código fuente", en: "Source code" },
+  liveDemo: { es: "Demo en vivo", en: "Live demo" },
+};

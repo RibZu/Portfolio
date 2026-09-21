@@ -34,15 +34,15 @@ Single Vite project at the repository root, per [plan.md](./plan.md): `src/`, `t
 **Purpose**: Turn an empty directory into a deployed, building project. The deployment happens
 here, before any feature work, so the pipeline is proven while it is still trivial to debug.
 
-- [ ] T001 Run `git init` at the repository root and create `.gitignore` covering `node_modules/`, `dist/`, `.env*`, and `.vercel`
-- [ ] T002 Scaffold the project with `npm create vite@latest . -- --template react` (JavaScript, not TypeScript, per constitution), keeping the existing `.specify/`, `.claude/`, `specs/`, and `README.md`
-- [ ] T003 Install runtime dependencies: `npm install bootstrap react-bootstrap`
-- [ ] T004 [P] Install the dev dependency `npm install -D vitest`
-- [ ] T005 [P] Configure the multi-page build in `vite.config.js`: `build.rollupOptions.input` mapping `main` to `index.html` and `en` to `en/index.html`
-- [ ] T006 [P] Add npm scripts to `package.json`: `dev`, `build`, `preview`, and `test` running `vitest run`
-- [ ] T007 Create the directory skeleton: `src/components/`, `src/data/`, `src/lib/`, `src/styles/`, `tests/`, `public/fonts/`, `public/img/projects/`, `public/og/`, and `en/`
-- [ ] T008 Create a public GitHub repository under the `RibZu` account, push `main`, then import it at vercel.com signed in with GitHub, accepting the detected Vite preset (build `npm run build`, output `dist`)
-- [ ] T009 Verify on the deployed scaffold that `/en` **without a trailing slash** resolves rather than returning 404 (see [research.md §10](./research.md)); if it 404s, add `{ "cleanUrls": true }` to `vercel.json` and redeploy
+- [X] T001 Run `git init` at the repository root and create `.gitignore` covering `node_modules/`, `dist/`, `.env*`, and `.vercel`
+- [X] T002 Scaffold the project with `npm create vite@latest . -- --template react` (JavaScript, not TypeScript, per constitution), keeping the existing `.specify/`, `.claude/`, `specs/`, and `README.md`
+- [X] T003 Install runtime dependencies: `npm install bootstrap react-bootstrap`
+- [X] T004 [P] Install the dev dependency `npm install -D vitest`
+- [X] T005 [P] Configure the multi-page build in `vite.config.js`: `build.rollupOptions.input` mapping `main` to `index.html` and `en` to `en/index.html`
+- [X] T006 [P] Add npm scripts to `package.json`: `dev`, `build`, `preview`, and `test` running `vitest run`
+- [X] T007 Create the directory skeleton: `src/components/`, `src/data/`, `src/lib/`, `src/styles/`, `tests/`, `public/fonts/`, `public/img/projects/`, `public/og/`, and `en/`
+- [X] T008 Create a public GitHub repository under the `RibZu` account, push `main`, then import it at vercel.com signed in with GitHub, accepting the detected Vite preset (build `npm run build`, output `dist`)
+- [X] T009 Verify on the deployed scaffold that `/en` **without a trailing slash** resolves rather than returning 404 (see [research.md §10](./research.md)); if it 404s, add `{ "cleanUrls": true }` to `vercel.json` and redeploy
 
 **Checkpoint**: An empty page is live on a `*.vercel.app` URL and every push republishes it.
 
@@ -100,14 +100,14 @@ seconds, without scrolling.
 **Independent Test**: Load the page on a phone and a laptop, look only above the fold, and confirm
 a non-technical person can name the owner's role and skills and knows where to click next.
 
-- [ ] T028 [P] [US1] Create `src/components/Header.jsx` using `react-bootstrap`'s `Navbar` imported individually, with same-document anchor links to the four section ids and a language switch rendered as an `<a>` to the opposite-language document that writes `localStorage.lang` before navigating and carries the current hash across (FR-034)
-- [ ] T029 [US1] In `src/components/Header.jsx`, label the language switch in the language it leads to — "English" on the Spanish page, "Español" on the English page — so a visitor who cannot read the current page can still find the switch
-- [ ] T030 [P] [US1] Create `src/components/Hero.jsx` rendering name, title, location, availability, and summary, with links to GitHub, LinkedIn, and contact where **exactly one is visually emphasised as the primary action** (FR-009)
-- [ ] T031 [US1] Write the real content for `summary` and `availability` in `src/data/profile.js`, in both languages, **60 words maximum per language**, aimed at a reader with no technical background
-- [ ] T032 [US1] Write the real `blurb` for every technology in `src/data/technologies.js`, in both languages: one sentence each, explaining what the technology is *used for* to someone who does not know what it is — "framework MVC para PHP" does not satisfy this; "la base sobre la que se arma una aplicación web en PHP, para no escribir todo desde cero" does
-- [ ] T033 [US1] Create `src/components/Skills.jsx` rendering the declared stack in `skills` order, each with its plain-language blurb, presented as an area **visually distinct from the projects section** (FR-007)
-- [ ] T034 [US1] In `src/components/Skills.jsx`, mark each skill as demonstrated or not using `isDemonstrated` from `src/lib/derive.js`, conveying it with a text or shape indicator and **never by colour alone** (FR-008). `typescript` and `node` will render as declared but not yet demonstrated, which is the intended honest presentation
-- [ ] T035 [US1] Verify the first screen carries name, title, location, availability, summary, and technologies with no scrolling at both 1366×768 and 375px width
+- [X] T028 [P] [US1] Create `src/components/Header.jsx` using `react-bootstrap`'s `Navbar` imported individually, with same-document anchor links to the four section ids and a language switch rendered as an `<a>` to the opposite-language document that writes `localStorage.lang` before navigating and carries the current hash across (FR-034)
+- [X] T029 [US1] In `src/components/Header.jsx`, label the language switch in the language it leads to — "English" on the Spanish page, "Español" on the English page — so a visitor who cannot read the current page can still find the switch
+- [X] T030 [P] [US1] Create `src/components/Hero.jsx` rendering name, title, location, availability, and summary, with links to GitHub, LinkedIn, and contact where **exactly one is visually emphasised as the primary action** (FR-009)
+- [X] T031 [US1] Write the real content for `summary` and `availability` in `src/data/profile.js`, in both languages, **60 words maximum per language**, aimed at a reader with no technical background
+- [X] T032 [US1] Write the real `blurb` for every technology in `src/data/technologies.js`, in both languages: one sentence each, explaining what the technology is *used for* to someone who does not know what it is — "framework MVC para PHP" does not satisfy this; "la base sobre la que se arma una aplicación web en PHP, para no escribir todo desde cero" does
+- [X] T033 [US1] Create `src/components/Skills.jsx` rendering the declared stack in `skills` order, each with its plain-language blurb, presented as an area **visually distinct from the projects section** (FR-007)
+- [X] T034 [US1] In `src/components/Skills.jsx`, mark each skill as demonstrated or not using `isDemonstrated` from `src/lib/derive.js`, conveying it with a text or shape indicator and **never by colour alone** (FR-008). `typescript` and `node` will render as declared but not yet demonstrated, which is the intended honest presentation
+- [X] T035 [US1] Verify the first screen carries name, title, location, availability, summary, and technologies with no scrolling at both 1366×768 and 375px width
 
 **Checkpoint**: The MVP is deliverable. A recruiter opening the link learns who this is and where to go next, in either language.
 
@@ -121,14 +121,14 @@ language.
 **Independent Test**: Pick a technology, narrow to it, and confirm the list holds every project
 using it and nothing else, each explained so a non-technical reader understands it.
 
-- [ ] T036 [P] [US2] Create `src/components/ProjectCard.jsx` rendering name, description, and **the project's own technologies on the card itself, not only in the filter that led to it** (FR-012), plus a source-code link and, when `demo` is set, a visually distinguished live-demo link (FR-013)
-- [ ] T037 [US2] In `src/components/ProjectCard.jsx`, bound the number of technology labels shown and indicate when more exist, and render the placeholder treatment when `image` is absent so the grid keeps its rhythm (Edge Cases)
-- [ ] T038 [US2] Write the real `description` for all eight projects in `src/data/projects.js`, in both languages, **condensed from each repository's existing README and rewritten for a non-technical reader**: what it does and what problem it solves. The READMEs carry the substance; this task is the translation into plain language, not invention
-- [ ] T039 [P] [US2] Create `src/components/TechFilter.jsx` per the contract in [contracts/content-schema.md](./contracts/content-schema.md) Part 3: a `<button>` per technology plus an "all" button, inside a group labelled by `ui.filterGroupLabel`, each carrying `aria-pressed`, each showing its **project count as text so counts are visible before any interaction** (FR-010), and the active state conveyed by a non-colour signal (FR-028)
-- [ ] T040 [US2] Create `src/components/Projects.jsx` owning the single `activeFilter` state, rendering the filtered, ordered list via `filterProjects`, with filtering that **never changes the URL and never scrolls the page**
-- [ ] T041 [US2] In `src/components/Projects.jsx`, add an `aria-live="polite"` region holding the current result count so screen readers hear the change and the resulting number (User Story 2, scenario 7), and render `ui.filterEmpty` instead of an empty region when a filter yields nothing
-- [ ] T042 [US2] Verify with the keyboard alone that every filter and project link is reachable in visual order with a visible focus indicator, and that filters respond to `Enter` and `Space`
-- [ ] T043 [US2] Verify that selecting each technology returns exactly the projects declaring it, that clearing restores the full set, and that PHP appears as a first-class grouping per [research.md §5](./research.md)
+- [X] T036 [P] [US2] Create `src/components/ProjectCard.jsx` rendering name, description, and **the project's own technologies on the card itself, not only in the filter that led to it** (FR-012), plus a source-code link and, when `demo` is set, a visually distinguished live-demo link (FR-013)
+- [X] T037 [US2] In `src/components/ProjectCard.jsx`, bound the number of technology labels shown and indicate when more exist, and render the placeholder treatment when `image` is absent so the grid keeps its rhythm (Edge Cases)
+- [X] T038 [US2] Write the real `description` for all eight projects in `src/data/projects.js`, in both languages, **condensed from each repository's existing README and rewritten for a non-technical reader**: what it does and what problem it solves. The READMEs carry the substance; this task is the translation into plain language, not invention
+- [X] T039 [P] [US2] Create `src/components/TechFilter.jsx` per the contract in [contracts/content-schema.md](./contracts/content-schema.md) Part 3: a `<button>` per technology plus an "all" button, inside a group labelled by `ui.filterGroupLabel`, each carrying `aria-pressed`, each showing its **project count as text so counts are visible before any interaction** (FR-010), and the active state conveyed by a non-colour signal (FR-028)
+- [X] T040 [US2] Create `src/components/Projects.jsx` owning the single `activeFilter` state, rendering the filtered, ordered list via `filterProjects`, with filtering that **never changes the URL and never scrolls the page**
+- [X] T041 [US2] In `src/components/Projects.jsx`, add an `aria-live="polite"` region holding the current result count so screen readers hear the change and the resulting number (User Story 2, scenario 7), and render `ui.filterEmpty` instead of an empty region when a filter yields nothing
+- [X] T042 [US2] Verify with the keyboard alone that every filter and project link is reachable in visual order with a visible focus indicator, and that filters respond to `Enter` and `Space`
+- [X] T043 [US2] Verify that selecting each technology returns exactly the projects declaring it, that clearing restores the full set, and that PHP appears as a first-class grouping per [research.md §5](./research.md)
 
 **Checkpoint**: The portfolio now does the thing GitHub does badly. US1 and US2 both work independently.
 
@@ -142,9 +142,9 @@ history lives.
 **Independent Test**: Read the background section alone and confirm it conveys the trajectory
 while making clear LinkedIn holds the complete record.
 
-- [ ] T044 [P] [US3] Create `src/components/Background.jsx` rendering work, education, and certifications on one reverse-chronological timeline via `sortExperience`, with each entry's period shown (FR-020)
-- [ ] T045 [US3] In `src/components/Background.jsx`, state the owner's spoken language proficiency from `profile.spokenLanguages` (FR-021) and add a clearly labelled link to the full LinkedIn profile (FR-022)
-- [ ] T046 [US3] Write the real `description` values in `src/data/experience.js` for the three work roles and the Tecnicatura, in both languages, condensed rather than duplicating the CV
+- [X] T044 [P] [US3] Create `src/components/Background.jsx` rendering work, education, and certifications on one reverse-chronological timeline via `sortExperience`, with each entry's period shown (FR-020)
+- [X] T045 [US3] In `src/components/Background.jsx`, state the owner's spoken language proficiency from `profile.spokenLanguages` (FR-021) and add a clearly labelled link to the full LinkedIn profile (FR-022)
+- [X] T046 [US3] Write the real `description` values in `src/data/experience.js` for the three work roles and the Tecnicatura, in both languages, condensed rather than duplicating the CV
 
 **Checkpoint**: Interest converts into confidence. Three stories working independently.
 
@@ -157,8 +157,8 @@ while making clear LinkedIn holds the complete record.
 **Independent Test**: Complete each offered contact route and confirm it reaches a working
 destination.
 
-- [ ] T047 [P] [US4] Create `src/components/Contact.jsx` offering the email as a `mailto:` link **with the address also rendered as selectable text**, so a visitor with no configured mail application can copy it (FR-023), alongside the GitHub and LinkedIn links
-- [ ] T048 [US4] Apply the external-link contract across every outbound link in the codebase: `target="_blank"`, `rel="noopener noreferrer"`, and the visually-hidden `ui.externalLink` text so assistive technology announces the new tab (FR-024)
+- [X] T047 [P] [US4] Create `src/components/Contact.jsx` offering the email as a `mailto:` link **with the address also rendered as selectable text**, so a visitor with no configured mail application can copy it (FR-023), alongside the GitHub and LinkedIn links
+- [X] T048 [US4] Apply the external-link contract across every outbound link in the codebase: `target="_blank"`, `rel="noopener noreferrer"`, and the visually-hidden `ui.externalLink` text so assistive technology announces the new tab (FR-024)
 
 **Checkpoint**: The funnel is closed. All four visitor-facing stories work.
 
@@ -171,8 +171,8 @@ destination.
 **Independent Test**: Add a project declaring a technology no project currently uses, then confirm
 it appears, a filter for that technology exists, counts are right, and nothing else needed editing.
 
-- [ ] T049 [US5] Add a temporary ninth project to `src/data/projects.js` declaring `typescript`, then verify it appears in the list, a `typescript` filter has appeared, every count is correct, and the `typescript` skill has flipped to demonstrated — **all without editing any file but `projects.js`**. Remove the temporary entry afterwards
-- [ ] T050 [US5] Document the add-a-project workflow in `README.md`, pointing at [contracts/content-schema.md](./contracts/content-schema.md), so the owner and any future assistant know that content lives in `src/data/` and nowhere else
+- [X] T049 [US5] Add a temporary ninth project to `src/data/projects.js` declaring `typescript`, then verify it appears in the list, a `typescript` filter has appeared, every count is correct, and the `typescript` skill has flipped to demonstrated — **all without editing any file but `projects.js`**. Remove the temporary entry afterwards
+- [X] T050 [US5] Document the add-a-project workflow in `README.md`, pointing at [contracts/content-schema.md](./contracts/content-schema.md), so the owner and any future assistant know that content lives in `src/data/` and nowhere else
 
 **Checkpoint**: The site is maintainable by its owner. All five stories complete.
 
@@ -185,27 +185,27 @@ run against a **deployed URL**, not localhost (FR-050).
 
 ### Assets
 
-- [ ] T051 [P] Download the committed screenshots from `RedSocialArtesanos` and `TyH-Noticias` under their `docs/screenshots/` paths, convert to WebP sized to the card's rendered dimensions at 2×, and commit to `public/img/projects/`, then set `image`, `imageWidth`, and `imageHeight` on those two projects in `src/data/projects.js`
-- [ ] T052 [P] Create the placeholder project image from the palette in `public/img/projects/` for the six projects without a screenshot, so their absence reads as deliberate rather than broken
-- [ ] T053 [P] Create the social preview images `public/og/og-es.png` and `public/og/og-en.png`, reusing the existing banner artwork so the shared link matches the owner's GitHub and LinkedIn identity
-- [ ] T054 [P] Add the self-hosted subset display font as `woff2` to `public/fonts/` and preload it from both HTML entry points
+- [X] T051 [P] Download the committed screenshots from `RedSocialArtesanos` and `TyH-Noticias` under their `docs/screenshots/` paths, convert to WebP sized to the card's rendered dimensions at 2×, and commit to `public/img/projects/`, then set `image`, `imageWidth`, and `imageHeight` on those two projects in `src/data/projects.js`
+- [X] T052 [P] Create the placeholder project image from the palette in `public/img/projects/` for the six projects without a screenshot, so their absence reads as deliberate rather than broken
+- [X] T053 [P] Create the social preview images `public/og/og-es.png` and `public/og/og-en.png`, reusing the existing banner artwork so the shared link matches the owner's GitHub and LinkedIn identity
+- [X] T054 [P] Add the self-hosted subset display font as `woff2` to `public/fonts/` and preload it from both HTML entry points
 
 ### Cross-cutting behaviour
 
-- [ ] T055 [P] Add a `prefers-reduced-motion: reduce` block to `src/styles/app.css` suppressing all non-essential animation (FR-031)
-- [ ] T056 Verify that with JavaScript disabled the identity, background, and contact sections remain readable and every project stays listed, even though filtering is unavailable (Edge Cases)
-- [ ] T057 Run `npm test` and confirm both suites pass, including the assertion that no placeholder marker survives in any content field
+- [X] T055 [P] Add a `prefers-reduced-motion: reduce` block to `src/styles/app.css` suppressing all non-essential animation (FR-031)
+- [X] T056 Verify that with JavaScript disabled the identity, background, and contact sections remain readable and every project stays listed, even though filtering is unavailable (Edge Cases)
+- [X] T057 Run `npm test` and confirm both suites pass, including the assertion that no placeholder marker survives in any content field
 
 ### Release gates — run against the deployed URL, in both languages
 
-- [ ] T058 Run Lighthouse on mobile against `/` and `/en/`; **pass is 90 or above in Performance, Accessibility, Best Practices, and SEO** (SC-005), and Cumulative Layout Shift at or below 0.1 (SC-008)
-- [ ] T059 Run axe DevTools on both pages for **zero WCAG 2.1 AA violations** (SC-006), then `Tab` the whole page confirming visible focus throughout and no focus trap, and confirm with a screen reader that changing a filter announces the result count
-- [ ] T060 Sweep the viewport from **320px to 2560px** confirming no horizontal scrollbar and no clipped text at any width (SC-007)
-- [ ] T061 Run a link check across both deployed pages: every repository link, the `api-digesto` demo, both profile links, the LaCiS link, and the `mailto:` (SC-010)
-- [ ] T062 Verify direct entry per the table in [quickstart.md](./quickstart.md) check 6: `/` with a Spanish browser and with an English browser, `/en/` directly, `/en` without the trailing slash, `/#projects`, and `/en/#projects`; then confirm switching language mid-page lands in the same section, that the choice survives a reopened tab, and that the page still renders with cookies and site data blocked
-- [ ] T063 Paste both URLs into a link preview tester and confirm **each language shows its own title, description, and image** — an English preview showing Spanish text means `en/index.html` metadata was never translated (FR-041)
-- [ ] T064 Run the human check from [quickstart.md](./quickstart.md) check 9: show the page to a non-technical person for 30 seconds, take it away, and ask what the owner does, what they are good at, and what one project does. **Pass is all three** (SC-001, SC-003, SC-011). Failure here means the copy is still written for developers, and no Lighthouse score compensates
-- [ ] T065 Record the production URL and add it to the owner's CV and LinkedIn profile (FR-051)
+- [X] T058 Run Lighthouse on mobile against `/` and `/en/`; **pass is 90 or above in Performance, Accessibility, Best Practices, and SEO** (SC-005), and Cumulative Layout Shift at or below 0.1 (SC-008)
+- [X] T059 Run axe DevTools on both pages for **zero WCAG 2.1 AA violations** (SC-006), then `Tab` the whole page confirming visible focus throughout and no focus trap, and confirm with a screen reader that changing a filter announces the result count
+- [X] T060 Sweep the viewport from **320px to 2560px** confirming no horizontal scrollbar and no clipped text at any width (SC-007)
+- [X] T061 Run a link check across both deployed pages: every repository link, the `api-digesto` demo, both profile links, the LaCiS link, and the `mailto:` (SC-010)
+- [X] T062 Verify direct entry per the table in [quickstart.md](./quickstart.md) check 6: `/` with a Spanish browser and with an English browser, `/en/` directly, `/en` without the trailing slash, `/#projects`, and `/en/#projects`; then confirm switching language mid-page lands in the same section, that the choice survives a reopened tab, and that the page still renders with cookies and site data blocked
+- [X] T063 Paste both URLs into a link preview tester and confirm **each language shows its own title, description, and image** — an English preview showing Spanish text means `en/index.html` metadata was never translated (FR-041)
+- [X] T064 Run the human check from [quickstart.md](./quickstart.md) check 9: show the page to a non-technical person for 30 seconds, take it away, and ask what the owner does, what they are good at, and what one project does. **Pass is all three** (SC-001, SC-003, SC-011). Failure here means the copy is still written for developers, and no Lighthouse score compensates
+- [X] T065 Record the production URL and add it to the owner's CV and LinkedIn profile (FR-051)
 
 ---
 
@@ -277,3 +277,4 @@ descriptions, in two languages, for a reader who does not know what PHP is. The 
 substance, so this is translation rather than invention, but it is the work that decides whether
 SC-003 and SC-011 pass. Budget real time for it, and expect T064 to send it back for a rewrite at
 least once.
+

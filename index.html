@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simón Riberi Zunino - Desarrollador de Software</title>
+    <meta name="description" content="Portfolio de Simón Riberi Zunino, Desarrollador de Software en San Luis, Argentina." />
+    
+    <meta property="og:title" content="Simón Riberi Zunino - Desarrollador de Software" />
+    <meta property="og:description" content="Portfolio de Simón Riberi Zunino, Desarrollador de Software." />
+    <meta property="og:image" content="/og/og-es.png" />
+    <meta property="og:type" content="website" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Simón Riberi Zunino - Desarrollador de Software" />
+    <meta name="twitter:description" content="Portfolio de Simón Riberi Zunino, Desarrollador de Software." />
+    <meta name="twitter:image" content="/og/og-es.png" />
+    
+    <link rel="alternate" hreflang="es" href="/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="x-default" href="/" />
+    
+    <link rel="preload" href="/fonts/Oswald-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <script>
+      try {
+        var lang = localStorage.getItem('lang');
+        if (lang === 'en') {
+          window.location.replace('/en/');
+        } else if (!lang) {
+          if (!navigator.language.startsWith('es')) {
+            window.location.replace('/en/');
+          }
+        }
+      } catch (e) {
+        // Ignore error
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

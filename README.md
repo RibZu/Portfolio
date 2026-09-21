@@ -1,43 +1,21 @@
-<h1 align="center">&lt; Portfolio</h1>
+# Portfolio Simón Riberi Zunino
 
-<p align="center">
-  Portfolio personal de <strong>Simón Riberi Zunino</strong>: un punto medio entre el detalle
-  técnico de GitHub y el recorrido profesional de LinkedIn, en una sola página.<br/>
-  Los proyectos se agrupan por tecnología y se explican en lenguaje claro, para que un reclutador
-  encuentre lo que busca en segundos.
-</p>
+Este es el repositorio del portfolio personal de Simón Riberi Zunino. Está construido como un sitio estático usando React y Vite, y se despliega automáticamente en Vercel.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-1d2d3d?style=for-the-badge&logo=react&logoColor=749dc4" />
-  <img src="https://img.shields.io/badge/Vite-1d2d3d?style=for-the-badge&logo=vite&logoColor=749dc4" />
-  <img src="https://img.shields.io/badge/Bootstrap-1d2d3d?style=for-the-badge&logo=bootstrap&logoColor=749dc4" />
-  <img src="https://img.shields.io/badge/Vercel-1d2d3d?style=for-the-badge&logo=vercel&logoColor=f2f7fb" />
-</p>
+## 🛠 Cómo agregar o modificar proyectos
 
----
+Todo el contenido del sitio, incluyendo los proyectos y las tecnologías, está definido en la carpeta `src/data/`. **No necesitas tocar el código de los componentes de React ni de los estilos** para actualizar tu información.
 
-### Stack
+Para más detalles técnicos y restricciones, lee el [Esquema de Contenido (`contracts/content-schema.md`)](specs/001-portfolio-landing-page/contracts/content-schema.md).
 
-React + Vite, react-bootstrap y CSS propio. Sitio estático, sin backend, desplegado en Vercel.
+### Flujo de trabajo para agregar un proyecto:
 
-### Cómo correrlo
-
-```bash
-npm install
-npm run dev
-```
-
-### Documentación
-
-| | |
-|---|---|
-| [Constitución](.specify/memory/constitution.md) | Principios y restricciones del proyecto |
-| [Especificación](specs/001-portfolio-landing-page/spec.md) | Requisitos, criterios de éxito y despliegue |
-
----
-
-<p align="center">
-  <a href="https://github.com/RibZu">github.com/RibZu</a> ·
-  <a href="https://www.linkedin.com/in/simon-riberi-5a28bb238/">LinkedIn</a> ·
-  <a href="mailto:simonriberizunino@gmail.com">simonriberizunino@gmail.com</a>
-</p>
+1. **Agrega el proyecto en `src/data/projects.js`:**
+   Solo necesitas añadir un nuevo objeto al array `projects` con la información de tu proyecto (nombre, descripción bilingüe, enlace al repo, enlace a demo, etc.).
+   *Las descripciones se deben escribir pensando en un reclutador no técnico.*
+2. **Asegúrate de que las tecnologías existan:**
+   Los IDs usados en el array `technologies` deben existir en `src/data/technologies.js`. Si vas a usar una tecnología nueva, agrégala primero en `src/data/technologies.js`.
+3. **Imágenes:**
+   Si tu proyecto incluye una imagen, guárdala en `public/img/projects/` en formato `.webp` y especifica las propiedades `image`, `imageWidth` e `imageHeight` en `projects.js`.
+4. **Guarda y sube (Push):**
+   Al subir los cambios a la rama `main` en GitHub, Vercel los detectará automáticamente. El nuevo proyecto aparecerá, los filtros de tecnologías se crearán si corresponde, las cantidades se re-calcularán y el estado de la habilidad pasará a "demostrada" sin que tengas que editar ninguna otra cosa.
