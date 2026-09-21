@@ -3,6 +3,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import { profile } from '../data/profile.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
+import { currentLanguage } from '../lib/language.js';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -11,8 +12,9 @@ export default function Contact() {
   return (
     <section id="contact" className={`section ${styles.contactSection} reveal-hidden`} ref={revealRef}>
       <div className="container">
-        <h2 className={styles.title}>{t(ui.headingContact)}</h2>
-        <div className={styles.content}>
+        <span className="section-label">{currentLanguage === 'es' ? 'Contacto' : 'Contact'}</span>
+        <h2 className="section-heading">{t(ui.headingContact)}</h2>
+        <div className={styles.contactBody}>
           <div className={styles.emailWrapper}>
             <a href={`mailto:${profile.email}`} className={styles.primaryButton}>
               Email Me

@@ -1,11 +1,11 @@
 .terminalWindow {
   background-color: var(--code-bg);
   border-radius: 10px;
-  border: 1px solid rgba(216,180,226,0.15);
+  border: 1px solid var(--border-subtle);
   padding: 1.5rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   font-family: 'Courier New', Courier, monospace;
-  color: #0f0;
+  color: var(--text);
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
@@ -26,9 +26,9 @@
   border-radius: 50%;
 }
 
-.terminalDot:nth-child(1) { background-color: #ff5f56; } /* Close */
-.terminalDot:nth-child(2) { background-color: #ffbd2e; } /* Minimize */
-.terminalDot:nth-child(3) { background-color: #27c93f; } /* Maximize */
+.terminalDot:nth-child(1) { background-color: var(--accent); }
+.terminalDot:nth-child(2) { background-color: rgba(216, 180, 226, 0.4); }
+.terminalDot:nth-child(3) { background-color: rgba(216, 180, 226, 0.2); }
 
 .commandPrompt {
   margin-bottom: 1.5rem;
@@ -62,8 +62,7 @@
 }
 
 .skillName {
-  color: #4af626;
-  text-shadow: 0 0 8px rgba(74, 246, 38, 0.4);
+  color: var(--text-h);
 }
 
 .badgeDemonstrated,
@@ -73,12 +72,11 @@
 }
 
 .badgeDemonstrated {
-  color: #00e5ff;
-  text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+  color: var(--accent);
 }
 
 .badgeDeclared {
-  color: #888;
+  color: var(--text);
 }
 
 .cursor {

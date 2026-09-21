@@ -4,6 +4,7 @@ import { projects } from '../data/projects.js';
 import { technologies } from '../data/technologies.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
+import { currentLanguage } from '../lib/language.js';
 import { filterProjects, visibleFilters, technologyCounts } from '../lib/derive.js';
 import { TechFilter } from './TechFilter.jsx';
 import { ProjectCard } from './ProjectCard.jsx';
@@ -19,9 +20,11 @@ export function Projects() {
 
   return (
     <section id="projects" className={`${styles.sectionProjects} reveal-hidden`} ref={revealRef}>
-      <h2>{t(ui.headingProjects || ui.navProjects)}</h2>
-      
-      <TechFilter 
+      <div className="container">
+      <span className="section-label">{currentLanguage === 'es' ? 'Proyectos' : 'Projects'}</span>
+      <h2 className="section-heading">{t(ui.headingProjects || ui.navProjects)}</h2>
+
+      <TechFilter
         technologies={visibleTechs} 
         counts={counts} 
         totalProjects={projects.length}
@@ -42,6 +45,7 @@ export function Projects() {
           ))}
         </div>
       )}
+      </div>
     </section>
   );
 }

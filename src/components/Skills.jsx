@@ -6,6 +6,7 @@ import { projects } from '../data/projects.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
 import { isDemonstrated } from '../lib/derive.js';
+import { currentLanguage } from '../lib/language.js';
 import styles from './Skills.module.css';
 
 export default function Skills() {
@@ -14,9 +15,9 @@ export default function Skills() {
   return (
     <section id="skills" className="section reveal-hidden" ref={revealRef}>
       <div className="container">
-        {/* Visually hide the heading but keep it for screen readers/structure */}
-        <h2 className="section-title" style={{ display: 'none' }}>{t(ui.headingSkills)}</h2>
-        
+        <span className="section-label">{currentLanguage === 'es' ? 'Tecnologías' : 'Technologies'}</span>
+        <h2 className="section-heading">{t(ui.headingSkills)}</h2>
+
         <div className={styles.terminalWindow}>
           <div className={styles.terminalHeader}>
             <div className={styles.terminalDot}></div>

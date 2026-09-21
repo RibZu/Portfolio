@@ -20,7 +20,8 @@ export default function Background() {
     <section id="background" className="section reveal-hidden" ref={revealRef}>
       <div className="container">
         <div className={styles.header}>
-          <h2 className="section-title" style={{marginBottom: 0}}>{t(ui.headingBackground)}</h2>
+          <span className="section-label">{currentLanguage === 'es' ? 'Trayectoria' : 'Background'}</span>
+          <h2 className="section-heading">{t(ui.headingBackground)}</h2>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.linkButton}>
             LinkedIn <span className={styles.srOnly}>{t(ui.externalLink)}</span>
           </a>

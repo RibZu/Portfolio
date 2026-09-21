@@ -1,30 +1,21 @@
 import React, { useState } from 'react';
 import styles from './Header.module.css';
-import { currentLanguage, setLanguagePreference, getOppositePath } from '../lib/language.js';
 import { t } from '../lib/content.js';
 import { ui } from '../data/ui.js';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const switchLang = currentLanguage === 'es' ? 'en' : 'es';
-  const oppositePath = getOppositePath();
-  const switchLabel = switchLang === 'en' ? 'English' : 'Español';
-
-  const handleLanguageSwitch = () => {
-    setLanguagePreference(switchLang);
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const hash = typeof window !== 'undefined' ? window.location.hash : '';
-
   return (
     <header className={`${styles.header} ${isMenuOpen ? styles.headerOpen : ''}`}>
+      <span className={styles.ball} aria-hidden="true" />
       <div className={`container ${styles.container}`}>
-        <button 
-          className={styles.toggle} 
+        <button
+          className={styles.toggle}
           onClick={toggleMenu}
           aria-label="Toggle navigation"
           aria-expanded={isMenuOpen}
@@ -38,11 +29,6 @@ export default function Header() {
             <li><a href="#background" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navBackground)}</a></li>
             <li><a href="#contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navContact)}</a></li>
           </ul>
-          <div className={styles.langSwitch}>
-            <a href={`${oppositePath}${hash}`} onClick={handleLanguageSwitch} className={styles.navLink}>
-              {switchLabel}
-            </a>
-          </div>
         </nav>
       </div>
     </header>
