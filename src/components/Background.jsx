@@ -13,17 +13,12 @@ const TIMELINE_LIMIT = 3;
 const mainEntries = sorted.filter((e) => e.type === 'work').slice(0, TIMELINE_LIMIT);
 const degreeEntries = sorted.filter((e) => e.degree);
 const certEntries = sorted.filter((e) => e.type === 'certification');
-const firstYear = Math.min(...mainEntries.map((e) => Number(e.period.from)));
 
 export default function Background() {
   return (
     <section id="background" className="block" aria-labelledby="background-title">
       <div className="container">
-        <SectionHead
-          id="background-title"
-          title={t(ui.headingBackground)}
-          meta={t(ui.backgroundMeta, firstYear)}
-        />
+        <SectionHead id="background-title" title={t(ui.headingBackground)} />
 
         <div className={styles.layout}>
           <div>

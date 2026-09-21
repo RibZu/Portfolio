@@ -1,25 +1,32 @@
-/* Mismas láminas y misma grilla que Proyectos */
-.grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--spacing-4);
-  align-items: start;
+/* Diagrama: láminas conectadas por flechas de pedido y respuesta */
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 @media (min-width: 760px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .flow {
+    flex-direction: row;
   }
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .header {
   padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--line);
 }
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.1;
+  font-size: 1.25rem;
+  line-height: 1.15;
   color: var(--ink);
 }
 
@@ -31,23 +38,126 @@
 
 .list {
   list-style: none;
+  padding: var(--spacing-3) var(--spacing-4) var(--spacing-4);
 }
 
-/* Cada tecnología es una fila del cajetín, con una marca de escala al inicio */
 .item {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-3);
-  padding: 0.7rem var(--spacing-4);
-  border-top: 1px solid var(--line-soft);
   color: var(--ink);
-  font-size: 1.0625rem;
-  font-weight: 500;
+  font-family: var(--font-family-display);
+  font-size: 2rem;
+  line-height: 1.25;
+  text-transform: uppercase;
 }
 
-.item::before {
+/* Conector */
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--spacing-5);
+  height: 5rem;
+}
+
+.arrow {
+  position: relative;
+  display: block;
+  width: 4.5rem;
+  height: 100%;
+  color: var(--ink);
+}
+
+.arrow em {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 0.6rem);
+  transform: translateY(-50%);
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  font-style: normal;
+}
+
+/* Vertical (móvil): línea central y punta abajo o arriba */
+.arrow::before {
   content: '';
-  width: 0.75rem;
-  height: 1px;
-  background: var(--ink);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: currentColor;
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 4.5px);
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+}
+
+.arrowForward::after {
+  bottom: 0;
+  border-top: 7px solid currentColor;
+}
+
+.arrowBack::after {
+  top: 0;
+  border-bottom: 7px solid currentColor;
+}
+
+/* Horizontal (escritorio): dos flechas apiladas entre láminas */
+@media (min-width: 760px) {
+  .link {
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: var(--spacing-2);
+    width: 9rem;
+    height: auto;
+    flex: none;
+  }
+
+  .arrow {
+    width: 100%;
+    height: 2.25rem;
+  }
+
+  .arrow em {
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: none;
+  }
+
+  .arrow::before {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0.6rem;
+    width: auto;
+    height: 1px;
+  }
+
+  .arrow::after {
+    top: auto;
+    bottom: calc(0.6rem - 4px);
+    border-top: 4.5px solid transparent;
+    border-bottom: 4.5px solid transparent;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .arrowForward::after {
+    left: auto;
+    right: 0;
+    border-left: 7px solid currentColor;
+  }
+
+  .arrowBack::after {
+    left: 0;
+    right: auto;
+    top: auto;
+    border-right: 7px solid currentColor;
+  }
 }

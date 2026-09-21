@@ -20,29 +20,46 @@ const orderedSkills = [...skills]
   .map((skill) => technologies.find((tech) => tech.id === skill.technologyId))
   .filter(Boolean);
 
+const nodes = layers
+  .map((layer) => ({ ...layer, items: orderedSkills.filter((tech) => tech.layer === layer.id) }))
+  .filter((layer) => layer.items.length > 0);
+
+/* Un diagrama de sistema: la pantalla le pide datos al servidor y el servidor responde. */
+function Link() {
+  return (
+    <div className={styles.link} aria-hidden="true">
+      <span className={`${styles.arrow} ${styles.arrowForward}`}>
+        <em>{t(ui.skillAsks)}</em>
+      </span>
+      <span className={`${styles.arrow} ${styles.arrowBack}`}>
+        <em>{t(ui.skillReplies)}</em>
+      </span>
+    </div>
+  );
+}
+
 export default function Skills() {
   return (
     <section id="skills" className="block" aria-labelledby="skills-title">
       <div className="container">
         <SectionHead id="skills-title" title={t(ui.headingSkills)} />
-        <div className={styles.grid}>
-          {layers.map((layer) => {
-            const items = orderedSkills.filter((tech) => tech.layer === layer.id);
-            if (items.length === 0) return null;
-            return (
-              <article key={layer.id} className={`sheet ${styles.group}`}>
+        <div className={styles.flow}>
+          {nodes.map((node, index) => (
+            <React.Fragment key={node.id}>
+              {index > 0 && <Link />}
+              <article className={`sheet ${styles.node}`}>
                 <header className={styles.header}>
-                  <h3 className={styles.title}>{t(layer.title)}</h3>
-                  <p className={styles.hint}>{t(layer.hint)}</p>
+                  <h3 className={styles.title}>{t(node.title)}</h3>
+                  <p className={styles.hint}>{t(node.hint)}</p>
                 </header>
                 <ul className={styles.list}>
-                  {items.map((tech) => (
+                  {node.items.map((tech) => (
                     <li key={tech.id} className={styles.item}>{tech.name}</li>
                   ))}
                 </ul>
               </article>
-            );
-          })}
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </section>

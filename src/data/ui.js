@@ -37,13 +37,11 @@ export const ui = {
   skillDataHint: { es: "Bases de datos", en: "Databases" },
   skillMobileTitle: { es: "Apps para celular", en: "Phone apps" },
   skillMobileHint: { es: "Aplicaciones móviles", en: "Mobile applications" },
+  skillAsks: { es: "Pide", en: "Asks" },
+  skillReplies: { es: "Responde", en: "Replies" },
   skillToolsTitle: { es: "Herramientas", en: "Tools" },
   skillToolsHint: { es: "Para publicar y mantener el sistema", en: "To publish and maintain the system" },
 
-  backgroundMeta: {
-    es: (from) => `Desde ${from}`,
-    en: (from) => `Since ${from}`,
-  },
   present: { es: "Presente", en: "Present" },
   languagesTitle: { es: "Idiomas", en: "Languages" },
   degreesTitle: { es: "Títulos", en: "Degrees" },

@@ -27,11 +27,7 @@ export function Projects() {
   return (
     <section id="projects" className="block" aria-labelledby="projects-title">
       <div className="container">
-        <SectionHead
-          id="projects-title"
-          title={t(ui.headingProjects)}
-          meta={t(ui.resultCount, filteredProjects.length)}
-        />
+        <SectionHead id="projects-title" title={t(ui.headingProjects)} />
 
         <TechFilter
           technologies={visibleTechs}
