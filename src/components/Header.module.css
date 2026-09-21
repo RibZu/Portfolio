@@ -6,9 +6,9 @@
   position: sticky;
   top: 1.25rem;
   z-index: 1000;
-  max-width: 880px;
+  max-width: 760px;
   margin: 0 auto 1.25rem;
-  min-height: 4.75rem;
+  min-height: 5.5rem;
   display: flex;
   align-items: center;
   border: 1px solid var(--line);
