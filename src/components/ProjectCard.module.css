@@ -1,40 +1,45 @@
+/* T010-T021: Dark-palette card redesign — Mac chrome removed */
+
 .projectCard {
-  background-color: #ffffff;
-  border: 1px solid rgba(55, 53, 47, 0.09);
-  border-radius: 8px; /* Notion uses smaller border-radii */
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
 }
 
-/* Notion doesn't use dark gradients, we just use a plain background */
 .projectCard::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  background: rgba(216,180,226,0.04);
   z-index: -1;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.25s ease;
 }
 
 .projectCard:hover {
-  transform: translateY(-5px) perspective(1000px) rotateX(2deg);
-  box-shadow: rgba(15, 15, 15, 0.1) 0px 4px 12px, rgba(15, 15, 15, 0.1) 0px 8px 24px;
-  border-color: rgba(55, 53, 47, 0.16);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent-border);
+}
+
+.projectCard:hover::before {
+  opacity: 1;
 }
 
 .projectImageContainer {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: #f7f7f5;
+  background: var(--border);
   overflow: hidden;
-  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  border-bottom: 1px solid var(--border);
 }
 
 .projectImage {
@@ -51,7 +56,7 @@
 .projectImagePlaceholder {
   width: 100%;
   height: 100%;
-  background: #f7f7f5;
+  background: var(--border);
 }
 
 .projectContent {
@@ -59,13 +64,13 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .projectTitle {
   font-family: var(--font-family-body);
   font-size: var(--font-size-xl);
-  color: #37352f;
+  color: var(--text-h);
   margin-top: 0;
   margin-bottom: var(--spacing-2);
   font-weight: 600;
@@ -75,7 +80,7 @@
 .projectDescription {
   font-family: var(--font-family-body);
   font-size: var(--font-size-sm);
-  color: #787774;
+  color: var(--text);
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: var(--spacing-4);
@@ -90,21 +95,21 @@
 }
 
 .techBadge {
-  background-color: rgba(227, 226, 224, 0.5);
-  color: #37352f;
+  background-color: rgba(216,180,226,0.12);
+  color: var(--accent);
   font-family: var(--font-family-body);
   font-size: var(--font-size-xs);
   font-weight: 500;
-  padding: 2px 6px;
-  border-radius: 3px;
-  border: 1px solid transparent;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(216,180,226,0.2);
   white-space: nowrap;
 }
 
 .techBadgeMore {
   background-color: transparent;
-  color: #787774;
-  border: 1px solid rgba(55, 53, 47, 0.09);
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
 .projectLinks {
@@ -116,25 +121,27 @@
 .projectLink {
   font-family: var(--font-family-body);
   font-size: var(--font-size-sm);
-  color: #37352f;
+  color: var(--text-h);
   text-decoration: none;
   font-weight: 500;
   padding: var(--spacing-1) var(--spacing-2);
   border-radius: 4px;
   background-color: transparent;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.projectLink:hover, .projectLink:focus-visible {
-  background-color: rgba(55, 53, 47, 0.08);
-  color: #37352f;
+.projectLink:hover,
+.projectLink:focus-visible {
+  background-color: rgba(216,180,226,0.08);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .projectLink:focus-visible {
-  box-shadow: 0 0 0 2px rgba(46, 170, 220, 0.4);
+  box-shadow: 0 0 0 2px var(--accent-border);
   outline: none;
 }
 
@@ -148,31 +155,4 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-.macTitleBar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  background-color: #f6f6f6;
-  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-.macDot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.macRed {
-  background-color: #ff5f56;
-}
-
-.macYellow {
-  background-color: #ffbd2e;
-}
-
-.macGreen {
-  background-color: #27c93f;
 }

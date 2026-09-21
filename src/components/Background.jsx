@@ -13,7 +13,9 @@ export default function Background() {
   const sorted = sortExperience(experience);
   const langTitle = currentLanguage === 'es' ? 'Idiomas' : 'Languages';
   const presentText = currentLanguage === 'es' ? 'Presente' : 'Present';
-  
+  const mainEntries = sorted.filter(e => e.type !== 'certification');
+  const certEntries = sorted.filter(e => e.type === 'certification');
+
   return (
     <section id="background" className="section reveal-hidden" ref={revealRef}>
       <div className="container">
@@ -35,8 +37,12 @@ export default function Background() {
           </ul>
         </div>
 
+        <h3 className={styles.experienceSubheading}>
+          {currentLanguage === 'es' ? 'Experiencia' : 'Experience'}
+        </h3>
+
         <div className={styles.experienceList}>
-          {sorted.map(entry => (
+          {mainEntries.map(entry => (
             <div key={entry.id} className={styles.experienceItem}>
               <div className={styles.experienceHeader}>
                 <h4 className={styles.role}>{t(entry.role)}</h4>
@@ -50,6 +56,19 @@ export default function Background() {
               )}
             </div>
           ))}
+        </div>
+
+        <div className={styles.certificationsSection}>
+          <h3 className={styles.certificationsTitle}>
+            {currentLanguage === 'es' ? 'Certificaciones' : 'Certifications'}
+          </h3>
+          <div className={styles.certificationsPills}>
+            {certEntries.map(entry => (
+              <span key={entry.id} className={styles.certPill}>
+                {t(entry.role)} · {entry.period.from}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

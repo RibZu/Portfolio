@@ -1,7 +1,7 @@
 .terminalWindow {
-  background-color: #0c0c0c;
+  background-color: var(--code-bg);
   border-radius: 10px;
-  border: 1px solid #333;
+  border: 1px solid rgba(216,180,226,0.15);
   padding: 1.5rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   font-family: 'Courier New', Courier, monospace;
@@ -36,7 +36,7 @@
 }
 
 .commandUser {
-  color: #55ff55;
+  color: var(--accent);
   font-weight: bold;
 }
 
@@ -85,7 +85,7 @@
   display: inline-block;
   width: 10px;
   height: 1.2em;
-  background-color: #fff;
+  background-color: var(--accent);
   animation: blink 1s step-end infinite;
   vertical-align: middle;
   margin-left: 8px;

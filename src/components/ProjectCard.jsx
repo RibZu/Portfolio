@@ -16,11 +16,6 @@ export function ProjectCard({ project }) {
 
   return (
     <article className={styles.projectCard}>
-      <div className={styles.macTitleBar}>
-        <span className={`${styles.macDot} ${styles.macRed}`}></span>
-        <span className={`${styles.macDot} ${styles.macYellow}`}></span>
-        <span className={`${styles.macDot} ${styles.macGreen}`}></span>
-      </div>
       <div className={styles.projectImageContainer}>
         {project.image ? (
           <img 
