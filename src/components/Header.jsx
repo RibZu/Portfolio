@@ -32,7 +32,6 @@ export default function Header() {
           <span className={styles.toggleIcon}></span>
         </button>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
-          <div className={styles.navSpacer}></div>
           <ul className={styles.navList}>
             <li><a href="#skills" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navSkills)}</a></li>
             <li><a href="#projects" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navProjects)}</a></li>

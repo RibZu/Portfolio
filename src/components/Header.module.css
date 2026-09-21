@@ -60,22 +60,18 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-}
-
-.navSpacer {
-  flex: 1;
+  position: relative;
 }
 
 .navList {
   list-style: none;
   display: flex;
-  gap: var(--spacing-4);
+  gap: var(--spacing-5);
   margin: 0;
   padding: 0;
   justify-content: center;
-  flex: 1;
 }
 
 .navLink {
@@ -93,9 +89,9 @@
 }
 
 .langSwitch {
-  flex: 1;
+  position: absolute;
+  right: 20px;
   display: flex;
-  justify-content: flex-end;
 }
 
 @media (max-width: 991px) {
