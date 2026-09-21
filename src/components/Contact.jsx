@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section id="contact" className={`section ${styles.contactSection} reveal-hidden`} ref={revealRef}>
       <div className="container">
-        <h2 className={`section-title ${styles.title}`}>{t(ui.headingContact)}</h2>
+        <h2 className={styles.title}>{t(ui.headingContact)}</h2>
         <div className={styles.content}>
           <div className={styles.emailWrapper}>
             <a href={`mailto:${profile.email}`} className={styles.primaryButton}>

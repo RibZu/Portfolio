@@ -21,7 +21,7 @@ export default function Header() {
   const hash = typeof window !== 'undefined' ? window.location.hash : '';
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isMenuOpen ? styles.headerOpen : ''}`}>
       <div className={`container ${styles.container}`}>
         <button 
           className={styles.toggle} 

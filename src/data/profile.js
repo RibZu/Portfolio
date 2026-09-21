@@ -2,8 +2,8 @@ export const profile = {
   name: "Simón Riberi",
   title: { es: "Desarrollador de Software", en: "Software Developer" },
   summary: { 
-    es: "Técnico Universitario en Web graduado de la UNSL y desarrollador en el laboratorio LaCiS. Construyo aplicaciones web enfocadas en rendimiento, usabilidad y accesibilidad. Busco crear herramientas que resuelvan problemas reales de manera eficiente.", 
-    en: "Graduated University Web Technician from UNSL and developer at LaCiS laboratory. I build web applications focused on performance, usability, and accessibility. I seek to create tools that solve real problems efficiently." 
+    es: "Técnico Universitario en Web graduado de la UNSL. Construyo aplicaciones web de alto rendimiento enfocadas en resolver problemas reales.", 
+    en: "Graduated University Web Technician from UNSL. I build high-performance web applications focused on solving real problems." 
   },
   email: "simonriberizunino@gmail.com",
   github: "https://github.com/RibZu",

@@ -1,61 +1,97 @@
-.skillsGrid {
+.terminalWindow {
+  background-color: #0c0c0c;
+  border-radius: 10px;
+  border: 1px solid #333;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  font-family: 'Courier New', Courier, monospace;
+  color: #0f0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.terminalHeader {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-3);
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  align-items: center;
+}
+
+.terminalDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminalDot:nth-child(1) { background-color: #ff5f56; } /* Close */
+.terminalDot:nth-child(2) { background-color: #ffbd2e; } /* Minimize */
+.terminalDot:nth-child(3) { background-color: #27c93f; } /* Maximize */
+
+.commandPrompt {
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-base);
+}
+
+.commandUser {
+  color: #55ff55;
+  font-weight: bold;
+}
+
+.commandText {
+  color: #fff;
+  margin-left: 8px;
+}
+
+.skillsOutput {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
 }
 
 .skillItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-3);
-  padding: var(--spacing-2) var(--spacing-4);
-  background: linear-gradient(135deg, rgba(89,128,166,0.1) 0%, rgba(116,157,196,0.05) 100%);
-  border: 1px solid rgba(185, 207, 226, 0.2);
-  border-radius: 50px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.skillItem:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, rgba(89,128,166,0.2) 0%, rgba(116,157,196,0.15) 100%);
-  border-color: var(--color-accent-light);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(116,157,196,0.3);
+  gap: 0.5rem;
+  font-size: var(--font-size-base);
 }
 
 .skillName {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-base);
-  color: var(--color-text-primary);
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  color: #4af626;
+  text-shadow: 0 0 8px rgba(74, 246, 38, 0.4);
 }
 
 .badgeDemonstrated,
 .badgeDeclared {
-  font-size: var(--font-size-xs);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  font-weight: bold;
+  font-size: 0.85em;
+  opacity: 0.8;
 }
 
 .badgeDemonstrated {
-  background-color: var(--color-accent-light);
-  color: var(--color-surface);
-  box-shadow: 0 0 5px var(--color-accent-light);
+  color: #00e5ff;
+  text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
 }
 
 .badgeDeclared {
-  background-color: transparent;
-  color: var(--color-text-secondary);
-  border: 1px dashed var(--color-text-secondary);
+  color: #888;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: #fff;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

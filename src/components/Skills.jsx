@@ -14,28 +14,45 @@ export default function Skills() {
   return (
     <section id="skills" className="section reveal-hidden" ref={revealRef}>
       <div className="container">
-        <h2 className="section-title">{t(ui.headingSkills)}</h2>
-        <ul className={styles.skillsGrid}>
-          {skills.map(skill => {
-            const tech = technologies.find(t => t.id === skill.technologyId);
-            if (!tech) return null;
-            const demonstrated = isDemonstrated(tech.id, projects);
-            return (
-              <li key={skill.technologyId} className={styles.skillItem}>
-                <span className={styles.skillName}>{tech.name}</span>
-                {demonstrated ? (
-                  <span className={styles.badgeDemonstrated} title="Demonstrated in projects" aria-label="Demonstrated in projects">
-                    ✓
-                  </span>
-                ) : (
-                  <span className={styles.badgeDeclared} title="Declared skill" aria-label="Declared skill">
-                    ○
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        {/* Visually hide the heading but keep it for screen readers/structure */}
+        <h2 className="section-title" style={{ display: 'none' }}>{t(ui.headingSkills)}</h2>
+        
+        <div className={styles.terminalWindow}>
+          <div className={styles.terminalHeader}>
+            <div className={styles.terminalDot}></div>
+            <div className={styles.terminalDot}></div>
+            <div className={styles.terminalDot}></div>
+          </div>
+          <div className={styles.commandPrompt}>
+            <span className={styles.commandUser}>guest@portfolio:~$</span>
+            <span className={styles.commandText}>whoami --skills</span>
+          </div>
+          <ul className={styles.skillsOutput}>
+            {skills.map(skill => {
+              const tech = technologies.find(t => t.id === skill.technologyId);
+              if (!tech) return null;
+              const demonstrated = isDemonstrated(tech.id, projects);
+              return (
+                <li key={skill.technologyId} className={styles.skillItem}>
+                  <span className={styles.skillName}>&gt; {tech.name}</span>
+                  {demonstrated ? (
+                    <span className={styles.badgeDemonstrated} title="Demonstrated in projects" aria-label="Demonstrated in projects">
+                      [verified]
+                    </span>
+                  ) : (
+                    <span className={styles.badgeDeclared} title="Declared skill" aria-label="Declared skill">
+                      [learning]
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          <div className={styles.commandPrompt} style={{ marginTop: '1.5rem', marginBottom: '0' }}>
+            <span className={styles.commandUser}>guest@portfolio:~$</span>
+            <span className={styles.cursor}></span>
+          </div>
+        </div>
       </div>
     </section>
   );

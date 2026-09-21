@@ -1,11 +1,18 @@
 .contactSection {
-  background-color: var(--color-surface);
+  background-color: #ffffff;
   text-align: center;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(55, 53, 47, 0.09);
+  padding: var(--spacing-8) 0;
+  color: #37352f;
 }
 
 .title {
   margin-bottom: var(--spacing-6);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #37352f;
 }
 
 .content {
@@ -13,59 +20,81 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-5);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-6);
+  background-color: #ffffff;
+  border: 1px solid rgba(55, 53, 47, 0.09);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .emailWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-2);
+  gap: var(--spacing-3);
+  width: 100%;
 }
 
 .primaryButton {
   display: inline-block;
   padding: var(--spacing-3) var(--spacing-6);
-  background-color: var(--color-accent-base);
-  color: var(--color-text-primary);
+  background-color: #2eaadc; /* Notion blue */
+  color: #ffffff;
   border-radius: 4px;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: 500;
   transition: background-color 0.2s ease;
+  width: 100%;
+  max-width: 300px;
 }
 
 .primaryButton:hover,
 .primaryButton:focus-visible {
-  background-color: var(--color-accent-light);
+  background-color: #069cda;
   text-decoration: none;
-  color: var(--color-surface);
+  color: #ffffff;
 }
 
 .emailText {
-  color: var(--color-text-secondary);
+  color: #787774;
   font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
   user-select: all;
   margin: 0;
+  padding: var(--spacing-2);
+  background-color: #f7f7f5;
+  border-radius: 4px;
 }
 
 .socialLinks {
   display: flex;
   gap: var(--spacing-3);
   justify-content: center;
+  width: 100%;
+  border-top: 1px solid rgba(55, 53, 47, 0.09);
+  padding-top: var(--spacing-5);
 }
 
 .secondaryButton {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--spacing-2) var(--spacing-4);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-primary);
+  background-color: #ffffff;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  color: #37352f;
   border-radius: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .secondaryButton:hover,
 .secondaryButton:focus-visible {
-  background-color: var(--color-border);
-  color: var(--color-surface);
+  background-color: #f7f7f5;
+  color: #37352f;
   text-decoration: none;
 }
 
