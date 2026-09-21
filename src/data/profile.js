@@ -4,8 +4,8 @@ export const profile = {
   location: { es: "San Luis, Argentina", en: "San Luis, Argentina" },
   availability: { es: "Disponible para nuevos desafíos", en: "Available for new challenges" },
   summary: { 
-    es: "Estudiante de Desarrollo Web en la UNSL y desarrollador en el laboratorio LaCiS. Construyo aplicaciones web enfocadas en rendimiento, usabilidad y accesibilidad. Busco crear herramientas que resuelvan problemas reales de manera eficiente.", 
-    en: "Web Development student at UNSL and developer at LaCiS laboratory. I build web applications focused on performance, usability, and accessibility. I seek to create tools that solve real problems efficiently." 
+    es: "Técnico Universitario en Web graduado de la UNSL y desarrollador en el laboratorio LaCiS. Construyo aplicaciones web enfocadas en rendimiento, usabilidad y accesibilidad. Busco crear herramientas que resuelvan problemas reales de manera eficiente.", 
+    en: "Graduated University Web Technician from UNSL and developer at LaCiS laboratory. I build web applications focused on performance, usability, and accessibility. I seek to create tools that solve real problems efficiently." 
   },
   email: "simonriberizunino@gmail.com",
   github: "https://github.com/RibZu",

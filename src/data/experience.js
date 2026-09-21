@@ -3,7 +3,7 @@ export const experience = [
     id: "lacis",
     type: "work",
     role: { es: "Desarrollador Web (PTS)", en: "Web Developer (Supervised Practice)" },
-    organisation: "LaCiS — Universidad Nacional de San Luis",
+    organisation: "LaCiS – Universidad Nacional de San Luis",
     period: { from: "2026", to: null },
     description: { es: "Desarrollo de sistemas web académicos y de investigación. Trabajo en equipo utilizando tecnologías modernas para entregar soluciones eficientes y accesibles.", en: "Development of academic and research web systems. Teamwork using modern technologies to deliver efficient and accessible solutions." },
     url: "https://lacis.unsl.edu.ar/",
@@ -27,9 +27,9 @@ export const experience = [
   {
     id: "tecnicatura",
     type: "education",
-    role: { es: "Tecnicatura Universitaria en Web", en: "University Degree in Web Development" },
+    role: { es: "Técnico Universitario en Web", en: "University Web Technician" },
     organisation: "Universidad Nacional de San Luis",
-    period: { from: "2024", to: null },
+    period: { from: "2024", to: "2026" },
     description: { es: "Formación en programación frontend y backend, bases de datos, redes y diseño de interfaces web.", en: "Training in frontend and backend programming, databases, networks, and web interface design." }
   },
   {
