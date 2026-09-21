@@ -11,12 +11,6 @@ export default function Hero() {
         <div className={styles.content}>
           <h1 className={styles.title}>{profile.name}</h1>
           <h2 className={styles.subtitle}>{t(profile.title)}</h2>
-          <p className={styles.location}>{t(profile.location)}</p>
-          <div className={styles.availabilityWrapper}>
-            <span className={styles.availabilityBadge}>
-              {t(profile.availability)}
-            </span>
-          </div>
           <p className={styles.summary}>
             {t(profile.summary)}
           </p>

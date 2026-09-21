@@ -3,7 +3,6 @@ import styles from './Header.module.css';
 import { currentLanguage, setLanguagePreference, getOppositePath } from '../lib/language.js';
 import { t } from '../lib/content.js';
 import { ui } from '../data/ui.js';
-import { profile } from '../data/profile.js';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +23,6 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        <a href="#" className={styles.brand}>{profile.name}</a>
         <button 
           className={styles.toggle} 
           onClick={toggleMenu}
@@ -34,6 +32,7 @@ export default function Header() {
           <span className={styles.toggleIcon}></span>
         </button>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+          <div className={styles.navSpacer}></div>
           <ul className={styles.navList}>
             <li><a href="#skills" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navSkills)}</a></li>
             <li><a href="#projects" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navProjects)}</a></li>

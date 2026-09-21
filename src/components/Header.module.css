@@ -14,18 +14,7 @@
   flex-wrap: wrap;
 }
 
-.brand {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-xl);
-  font-weight: bold;
-  color: var(--color-display);
-  text-decoration: none;
-  text-transform: uppercase;
-}
 
-.brand:hover {
-  text-decoration: none;
-}
 
 .toggle {
   display: none;
@@ -64,7 +53,12 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-5);
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navSpacer {
+  flex: 1;
 }
 
 .navList {
@@ -73,6 +67,8 @@
   gap: var(--spacing-4);
   margin: 0;
   padding: 0;
+  justify-content: center;
+  flex: 1;
 }
 
 .navLink {
@@ -90,7 +86,9 @@
 }
 
 .langSwitch {
-  margin-left: auto;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media (max-width: 991px) {

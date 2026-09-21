@@ -1,8 +1,6 @@
 export const profile = {
-  name: "Simón Riberi Zunino",
+  name: "Simón Riberi",
   title: { es: "Desarrollador de Software", en: "Software Developer" },
-  location: { es: "San Luis, Argentina", en: "San Luis, Argentina" },
-  availability: { es: "Disponible para nuevos desafíos", en: "Available for new challenges" },
   summary: { 
     es: "Técnico Universitario en Web graduado de la UNSL y desarrollador en el laboratorio LaCiS. Construyo aplicaciones web enfocadas en rendimiento, usabilidad y accesibilidad. Busco crear herramientas que resuelvan problemas reales de manera eficiente.", 
     en: "Graduated University Web Technician from UNSL and developer at LaCiS laboratory. I build web applications focused on performance, usability, and accessibility. I seek to create tools that solve real problems efficiently." 

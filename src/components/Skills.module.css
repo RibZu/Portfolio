@@ -1,7 +1,8 @@
 .skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--spacing-4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-3);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -11,22 +12,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-3);
-  background-color: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  transition: border-color 0.2s ease;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-4);
+  background: linear-gradient(135deg, rgba(89,128,166,0.1) 0%, rgba(116,157,196,0.05) 100%);
+  border: 1px solid rgba(185, 207, 226, 0.2);
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .skillItem:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, rgba(89,128,166,0.2) 0%, rgba(116,157,196,0.15) 100%);
   border-color: var(--color-accent-light);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(116,157,196,0.3);
 }
 
 .skillName {
   font-family: var(--font-family-body);
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .badgeDemonstrated,
@@ -35,18 +42,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  font-weight: bold;
 }
 
 .badgeDemonstrated {
   background-color: var(--color-accent-light);
   color: var(--color-surface);
+  box-shadow: 0 0 5px var(--color-accent-light);
 }
 
 .badgeDeclared {
   background-color: transparent;
   color: var(--color-text-secondary);
-  border: 1px solid var(--color-text-secondary);
+  border: 1px dashed var(--color-text-secondary);
 }
