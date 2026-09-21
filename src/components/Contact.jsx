@@ -2,25 +2,26 @@ import React from 'react';
 import { profile } from '../data/profile.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
+import styles from './Contact.module.css';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-5 bg-light">
-      <div className="container text-center">
-        <h2 className="mb-4">{t(ui.headingContact)}</h2>
-        <div className="d-flex flex-column align-items-center gap-3">
-          <div>
-            <a href={`mailto:${profile.email}`} className="btn btn-primary btn-lg mb-2">
+    <section id="contact" className={`section ${styles.contactSection}`}>
+      <div className="container">
+        <h2 className={`section-title ${styles.title}`}>{t(ui.headingContact)}</h2>
+        <div className={styles.content}>
+          <div className={styles.emailWrapper}>
+            <a href={`mailto:${profile.email}`} className={styles.primaryButton}>
               Email Me
             </a>
-            <p className="text-muted user-select-all mb-0">{profile.email}</p>
+            <p className={styles.emailText}>{profile.email}</p>
           </div>
-          <div className="d-flex gap-3 mt-3">
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary">
-              GitHub <span className="visually-hidden">{t(ui.externalLink)}</span>
+          <div className={styles.socialLinks}>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
+              GitHub <span className={styles.srOnly}>{t(ui.externalLink)}</span>
             </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary">
-              LinkedIn <span className="visually-hidden">{t(ui.externalLink)}</span>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
+              LinkedIn <span className={styles.srOnly}>{t(ui.externalLink)}</span>
             </a>
           </div>
         </div>

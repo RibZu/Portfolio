@@ -1,13 +1,12 @@
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
+import React, { useState } from 'react';
+import styles from './Header.module.css';
 import { currentLanguage, setLanguagePreference, getOppositePath } from '../lib/language.js';
 import { t } from '../lib/content.js';
 import { ui } from '../data/ui.js';
 import { profile } from '../data/profile.js';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const switchLang = currentLanguage === 'es' ? 'en' : 'es';
   const oppositePath = getOppositePath();
   const switchLabel = switchLang === 'en' ? 'English' : 'Español';
@@ -16,27 +15,38 @@ export default function Header() {
     setLanguagePreference(switchLang);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const hash = typeof window !== 'undefined' ? window.location.hash : '';
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#">{profile.name}</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#skills">{t(ui.navSkills)}</Nav.Link>
-            <Nav.Link href="#projects">{t(ui.navProjects)}</Nav.Link>
-            <Nav.Link href="#background">{t(ui.navBackground)}</Nav.Link>
-            <Nav.Link href="#contact">{t(ui.navContact)}</Nav.Link>
-          </Nav>
-          <Nav>
-            <a href={`${oppositePath}${hash}`} onClick={handleLanguageSwitch} className="nav-link">
+    <header className={styles.header}>
+      <div className={`container ${styles.container}`}>
+        <a href="#" className={styles.brand}>{profile.name}</a>
+        <button 
+          className={styles.toggle} 
+          onClick={toggleMenu}
+          aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+        >
+          <span className={styles.toggleIcon}></span>
+        </button>
+        <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+          <ul className={styles.navList}>
+            <li><a href="#skills" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navSkills)}</a></li>
+            <li><a href="#projects" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navProjects)}</a></li>
+            <li><a href="#background" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navBackground)}</a></li>
+            <li><a href="#contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>{t(ui.navContact)}</a></li>
+          </ul>
+          <div className={styles.langSwitch}>
+            <a href={`${oppositePath}${hash}`} onClick={handleLanguageSwitch} className={styles.navLink}>
               {switchLabel}
             </a>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </div>
+        </nav>
+      </div>
+    </header>
   );
 }

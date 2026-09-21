@@ -5,6 +5,7 @@ import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
 import { sortExperience } from '../lib/derive.js';
 import { currentLanguage } from '../lib/language.js';
+import styles from './Background.module.css';
 
 export default function Background() {
   const sorted = sortExperience(experience);
@@ -12,45 +13,39 @@ export default function Background() {
   const presentText = currentLanguage === 'es' ? 'Presente' : 'Present';
   
   return (
-    <section id="background" className="py-5">
+    <section id="background" className="section">
       <div className="container">
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2>{t(ui.headingBackground)}</h2>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary">
-            LinkedIn <span className="visually-hidden">{t(ui.externalLink)}</span>
+        <div className={styles.header}>
+          <h2 className="section-title" style={{marginBottom: 0}}>{t(ui.headingBackground)}</h2>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.linkButton}>
+            LinkedIn <span className={styles.srOnly}>{t(ui.externalLink)}</span>
           </a>
         </div>
         
-        <div className="row mb-5">
-          <div className="col-12">
-            <h3 className="h5 mb-3">{langTitle}</h3>
-            <ul className="list-inline">
-              {profile.spokenLanguages.map((lang, i) => (
-                <li key={i} className="list-inline-item me-4 border rounded px-3 py-2 bg-light">
-                  <strong>{t(lang.name)}:</strong> {t(lang.level)}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className={styles.languagesSection}>
+          <h3 className={styles.languagesTitle}>{langTitle}</h3>
+          <ul className={styles.languagesList}>
+            {profile.spokenLanguages.map((lang, i) => (
+              <li key={i} className={styles.languageItem}>
+                <strong>{t(lang.name)}:</strong> {t(lang.level)}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className="row g-4">
+        <div className={styles.experienceList}>
           {sorted.map(entry => (
-            <div key={entry.id} className="col-12 col-md-6">
-              <div className="card h-100 border-0 shadow-sm">
-                <div className="card-body">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <h4 className="h5 mb-0">{t(entry.role)}</h4>
-                    <span className="badge bg-secondary">
-                      {entry.period.from} - {entry.period.to || presentText}
-                    </span>
-                  </div>
-                  <h5 className="h6 text-muted mb-3">{entry.organisation}</h5>
-                  {entry.description && (
-                    <p className="card-text mb-0">{t(entry.description)}</p>
-                  )}
-                </div>
+            <div key={entry.id} className={styles.experienceItem}>
+              <div className={styles.experienceHeader}>
+                <h4 className={styles.role}>{t(entry.role)}</h4>
+                <span className={styles.period}>
+                  {entry.period.from} - {entry.period.to || presentText}
+                </span>
               </div>
+              <h5 className={styles.organisation}>{entry.organisation}</h5>
+              {entry.description && (
+                <p className={styles.description}>{t(entry.description)}</p>
+              )}
             </div>
           ))}
         </div>

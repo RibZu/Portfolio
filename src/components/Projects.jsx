@@ -6,6 +6,7 @@ import { t } from '../lib/content.js';
 import { filterProjects, visibleFilters, technologyCounts } from '../lib/derive.js';
 import { TechFilter } from './TechFilter.jsx';
 import { ProjectCard } from './ProjectCard.jsx';
+import styles from './Projects.module.css';
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState(null);
@@ -15,7 +16,7 @@ export function Projects() {
   const filteredProjects = filterProjects(projects, activeFilter);
 
   return (
-    <section id="projects" className="section-projects">
+    <section id="projects" className={styles.sectionProjects}>
       <h2>{t(ui.headingProjects || ui.navProjects)}</h2>
       
       <TechFilter 
@@ -26,14 +27,14 @@ export function Projects() {
         onChange={setActiveFilter} 
       />
       
-      <div className="visually-hidden" aria-live="polite">
+      <div className={styles.visuallyHidden} aria-live="polite">
         {t(ui.resultCount, filteredProjects.length)}
       </div>
 
       {filteredProjects.length === 0 ? (
-        <p className="filter-empty">{t(ui.filterEmpty)}</p>
+        <p className={styles.filterEmpty}>{t(ui.filterEmpty)}</p>
       ) : (
-        <div className="projects-grid">
+        <div className={styles.projectsGrid}>
           {filteredProjects.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}

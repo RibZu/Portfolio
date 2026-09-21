@@ -1,20 +1,16 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
 @import "./tokens.css";
+@import "./globals.css";
 
 /* 
  * NOTE: The accent-base color (#5980a6) must never be used for normal-size text
  * as it reaches only 3.4:1 contrast ratio against the surface, violating FR-027.
  */
 
-body {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-  font-family: var(--font-family-body);
+@media (prefers-reduced-motion: reduce) { 
+  * { 
+    animation-duration: 0.01ms !important; 
+    animation-iteration-count: 1 !important; 
+    transition-duration: 0.01ms !important; 
+    scroll-behavior: auto !important; 
+  } 
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-display);
-  color: var(--color-display);
-}
-
-@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
