@@ -18,13 +18,50 @@
 
 .span {
   position: relative;
-  padding: 1.5rem 0.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.75rem 0.5rem 3.25rem;
   border-left: 1px solid var(--line);
   color: var(--ink);
-  font-family: var(--font-family-display);
-  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
-  line-height: 1;
+  outline-offset: -2px;
+}
+
+.icon {
+  width: clamp(2.25rem, 4.5vw, 3.25rem);
+  height: clamp(2.25rem, 4.5vw, 3.25rem);
+}
+
+.icon[data-wide] {
+  width: clamp(3.75rem, 7vw, 5.25rem);
+  height: auto;
+}
+
+/* El nombre aparece al señalar el tramo, como el valor de una cota */
+.name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--dim-offset) + 0.55rem);
+  font-size: 0.8125rem;
   text-align: center;
+  color: var(--ink-2);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.span:hover .name,
+.span:focus-visible .name {
+  opacity: 1;
+}
+
+/* Sin logo disponible se muestra el nombre */
+.nameOnly {
+  font-family: var(--font-family-display);
+  font-size: 1.75rem;
+  line-height: 1;
   text-transform: uppercase;
 }
 
@@ -57,7 +94,8 @@
 .span::before { left: -1px; }
 .chain::after { right: -1px; }
 
-.span:hover::after {
+.span:hover::after,
+.span:focus-visible::after {
   height: 2px;
   background: var(--mark);
 }
@@ -70,11 +108,25 @@
   }
 
   .span {
-    padding: 1.1rem 0 1.1rem 2.75rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem 0 1rem 2.75rem;
     border-left: 0;
     border-top: 1px solid var(--line);
-    font-size: 2rem;
-    text-align: left;
+  }
+
+  .icon,
+  .icon[data-wide] {
+    width: 3rem;
+    height: 2rem;
+  }
+
+  .name {
+    position: static;
+    opacity: 1;
+    font-size: 1rem;
+    color: var(--ink);
   }
 
   .span:last-child {
@@ -91,7 +143,8 @@
     height: auto;
   }
 
-  .span:hover::after {
+  .span:hover::after,
+  .span:focus-visible::after {
     width: 2px;
     height: auto;
   }
