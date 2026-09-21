@@ -49,3 +49,19 @@ export default function TechIcon({ id, className }) {
     </svg>
   );
 }
+
+/* Logo para usar dentro de otro <svg>: centrado en (0, 0) y escalado a `size` unidades. */
+export function TechGlyph({ id, size, className }) {
+  const icon = icons[id];
+  if (!icon) return null;
+  const wide = Boolean(tightViewBox[id]);
+  const scale = (wide ? size * 1.25 : size) / 24;
+  const centerY = wide ? 7.5 + 4.5 : 12;
+  return (
+    <path
+      className={className}
+      d={icon.path}
+      transform={`translate(${-12 * scale} ${-centerY * scale}) scale(${scale})`}
+    />
+  );
+}

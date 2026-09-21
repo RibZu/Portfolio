@@ -1,163 +1,122 @@
-/*
- * Cadena de cotas. Cada <li> es un tramo:
- *  - borde izquierdo = línea de referencia (sobresale de la línea de cota)
- *  - ::after = línea de cota
- *  - ::before = marca oblicua en la unión
- */
-.chain {
-  --dim-offset: 1rem; /* distancia de la línea de cota al borde inferior */
-  --tick: 0.9rem;
-
-  position: relative;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(0, 1fr);
-  list-style: none;
-  padding-top: var(--spacing-3);
-}
-
-.span {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 1.75rem 0.5rem 3.25rem;
-  border-left: 1px solid var(--line);
-  color: var(--ink);
-  outline-offset: -2px;
-}
-
-.icon {
-  width: clamp(2.25rem, 4.5vw, 3.25rem);
-  height: clamp(2.25rem, 4.5vw, 3.25rem);
-}
-
-.icon[data-wide] {
-  width: clamp(3.75rem, 7vw, 5.25rem);
+/* Constelación: comparte formas y colores con el dibujo del Hero */
+.map {
+  display: block;
+  width: 100%;
   height: auto;
+  overflow: visible;
 }
 
-/* El nombre aparece al señalar el tramo, como el valor de una cota */
-.name {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: calc(var(--dim-offset) + 0.55rem);
-  font-size: 0.8125rem;
-  text-align: center;
-  color: var(--ink-2);
-  opacity: 0;
-  transition: opacity 0.15s ease;
+.star {
+  fill: var(--line);
+  opacity: 0.7;
 }
 
-.span:hover .name,
-.span:focus-visible .name {
-  opacity: 1;
+/* Anillo exterior punteado: los trazos avanzan despacio alrededor */
+.ring {
+  fill: none;
+  stroke: var(--blue-mid);
+  stroke-width: 1;
+  stroke-dasharray: 4 8;
+  opacity: 0.6;
+  animation: crawl 30s linear infinite;
 }
 
-/* Sin logo disponible se muestra el nombre */
-.nameOnly {
-  font-family: var(--font-family-display);
-  font-size: 1.75rem;
-  line-height: 1;
-  text-transform: uppercase;
+.inner {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  opacity: 0.3;
 }
 
-.span:last-child {
-  border-right: 1px solid var(--line);
+.hex {
+  fill: var(--blue-mid);
+  fill-opacity: 0.06;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  stroke-opacity: 0.45;
 }
 
-.span::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: var(--dim-offset);
-  height: 1px;
-  background: var(--line);
+.dot {
+  fill: var(--blue);
 }
 
-/* Marca oblicua centrada sobre la unión */
-.span::before,
-.chain::after {
-  content: '';
-  position: absolute;
-  bottom: calc(var(--dim-offset) - var(--tick) / 2);
-  width: 1px;
-  height: var(--tick);
-  background: var(--ink);
-  transform: rotate(45deg);
+.dotPulse {
+  fill: var(--line-strong);
+  animation: pulse 3s infinite;
 }
 
-.span::before { left: -1px; }
-.chain::after { right: -1px; }
-
-.span:hover::after,
-.span:focus-visible::after {
-  height: 2px;
-  background: var(--mark);
+.link {
+  stroke: var(--blue);
+  stroke-width: 1.5;
+  opacity: 0.85;
 }
 
-/* Móvil: la cadena se vuelve vertical */
-@media (max-width: 759px) {
-  .chain {
-    grid-auto-flow: row;
-    padding-top: 0;
+.spark {
+  fill: var(--mark);
+}
+
+.body,
+.bodyHub {
+  fill: var(--paper);
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+  transition: stroke 0.15s ease;
+}
+
+.bodyHub {
+  stroke: var(--blue);
+  stroke-width: 2.5;
+}
+
+.node:hover .body,
+.node:hover .bodyHub {
+  stroke: var(--mark);
+}
+
+.glyph {
+  fill: var(--ink);
+}
+
+.initials {
+  fill: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.label {
+  fill: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Halo que se expande desde cada estrella */
+.halo {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: halo 3.6s ease-out infinite;
+}
+
+@keyframes halo {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.6); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes crawl {
+  to { stroke-dashoffset: -96; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring, .dotPulse, .halo {
+    animation: none;
   }
 
-  .span {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 1rem;
-    padding: 1rem 0 1rem 2.75rem;
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .icon,
-  .icon[data-wide] {
-    width: 3rem;
-    height: 2rem;
-  }
-
-  .name {
-    position: static;
-    opacity: 1;
-    font-size: 1rem;
-    color: var(--ink);
-  }
-
-  .span:last-child {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .span::after {
-    left: 1rem;
-    right: auto;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    height: auto;
-  }
-
-  .span:hover::after,
-  .span:focus-visible::after {
-    width: 2px;
-    height: auto;
-  }
-
-  .span::before {
-    left: calc(1rem - 0.5px);
-    top: calc(var(--tick) / -2);
-    bottom: auto;
-  }
-
-  .chain::after {
-    left: calc(1rem - 0.5px);
-    right: auto;
-    bottom: calc(var(--tick) / -2);
-  }
+  .halo { opacity: 0; }
 }
