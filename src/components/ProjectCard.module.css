@@ -1,158 +1,87 @@
-/* T010-T021: Dark-palette card redesign — Mac chrome removed */
-
-.projectCard {
-  background-color: var(--code-bg);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  overflow: hidden;
+.sheet {
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sheet);
+  scroll-margin-top: 7rem;
+  transition: border-color 0.15s ease;
 }
 
-.projectCard::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 12px;
-  background: rgba(216,180,226,0.04);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+.sheet:hover {
+  border-color: var(--ink);
 }
 
-.projectCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  border-color: var(--accent-border);
-}
-
-.projectCard:hover::before {
-  opacity: 1;
-}
-
-.projectImageContainer {
+.image {
+  display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  background: var(--border);
-  overflow: hidden;
-  border-bottom: 1px solid var(--border);
-}
-
-.projectImage {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-bottom: 1px solid var(--line);
 }
 
-.projectCard:hover .projectImage {
-  transform: scale(1.05);
-}
-
-.projectImagePlaceholder {
-  width: 100%;
-  height: 100%;
-  background: var(--border);
-}
-
-.projectContent {
+.body {
+  flex: 1;
   padding: var(--spacing-4);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  background-color: transparent;
 }
 
-.projectTitle {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-xl);
-  color: var(--text-h);
-  margin-top: 0;
-  margin-bottom: var(--spacing-2);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+.title {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.875rem;
+  line-height: 1.05;
+  color: var(--ink);
 }
 
-.projectDescription {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-sm);
-  color: var(--text);
-  line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: var(--spacing-4);
-  flex-grow: 1;
+.description {
+  max-width: 52ch;
+  color: var(--ink-2);
+  line-height: 1.55;
 }
 
-.projectTechnologies {
+/* Cajetín */
+.titleBlock {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-2);
-  margin-bottom: var(--spacing-4);
+  border-top: 1px solid var(--line);
 }
 
-.techBadge {
-  background-color: rgba(216,180,226,0.12);
-  color: var(--accent);
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-xs);
-  font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(216,180,226,0.2);
-  white-space: nowrap;
+.cell {
+  padding: 0.6rem var(--spacing-3);
+  min-width: 0;
 }
 
-.techBadgeMore {
-  background-color: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+.cell dt {
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
 
-.projectLinks {
-  display: flex;
-  gap: var(--spacing-3);
-  margin-top: auto;
+.cell dd {
+  color: var(--ink);
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
 }
 
-.projectLink {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-sm);
-  color: var(--text-h);
-  text-decoration: none;
-  font-weight: 500;
-  padding: var(--spacing-1) var(--spacing-2);
-  border-radius: 4px;
-  background-color: transparent;
-  transition: background-color 0.15s ease, color 0.15s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.cellTech { flex: 1 1 100%; }
+
+.cellLink {
+  flex: 1 1 0;
+  border-top: 1px solid var(--line-soft);
 }
 
-.projectLink:hover,
-.projectLink:focus-visible {
-  background-color: rgba(216,180,226,0.08);
-  color: var(--accent);
-  text-decoration: none;
+.cellLink + .cellLink {
+  border-left: 1px solid var(--line-soft);
 }
 
-.projectLink:focus-visible {
-  box-shadow: 0 0 0 2px var(--accent-border);
-  outline: none;
+.cell a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
-.visuallyHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+.cell a:hover,
+.cell a:focus-visible {
+  color: var(--mark);
 }

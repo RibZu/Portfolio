@@ -2,46 +2,32 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-2);
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--spacing-5);
 }
 
 .filterBtn {
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 9999px;
-  padding: var(--spacing-1) var(--spacing-3);
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-sm);
-  cursor: pointer;
   display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-1);
-  transition: all 0.2s ease-in-out;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.filterBtn:hover, .filterBtn:focus-visible {
-  border-color: var(--border-subtle);
-  background-color: var(--surface);
-  color: var(--text-h);
-  outline: none;
+.filterBtn:hover {
+  background: var(--line-soft);
 }
 
-.filterBtn:focus-visible {
-  box-shadow: 0 0 0 3px rgba(116, 157, 196, 0.4);
-}
-
-.filterBtn[aria-pressed="true"] {
-  background-color: var(--accent-bg);
-  border-color: var(--accent-border);
-  color: var(--accent);
-}
-
-.filterName {
-  font-weight: 500;
+.filterBtn[aria-pressed='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
 }
 
 .filterCount {
-  opacity: 0.8;
-  font-size: var(--font-size-xs);
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
 }

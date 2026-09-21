@@ -1,95 +1,63 @@
-.terminalWindow {
-  background-color: var(--code-bg);
-  border-radius: 10px;
-  border: 1px solid var(--border-subtle);
-  padding: 1.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  font-family: 'Courier New', Courier, monospace;
-  color: var(--text);
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.terminalHeader {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #333;
-  align-items: center;
-}
-
-.terminalDot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.terminalDot:nth-child(1) { background-color: var(--accent); }
-.terminalDot:nth-child(2) { background-color: rgba(216, 180, 226, 0.4); }
-.terminalDot:nth-child(3) { background-color: rgba(216, 180, 226, 0.2); }
-
-.commandPrompt {
-  margin-bottom: 1.5rem;
-  font-size: var(--font-size-base);
-}
-
-.commandUser {
-  color: var(--accent);
-  font-weight: bold;
-}
-
-.commandText {
-  color: #fff;
-  margin-left: 8px;
-}
-
-.skillsOutput {
+.list {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.75rem;
-}
-
-.skillItem {
-  display: flex;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 8rem;
   align-items: center;
-  gap: 0.5rem;
-  font-size: var(--font-size-base);
+  gap: var(--spacing-5);
+  padding-block: var(--spacing-4);
+  border-top: 1px solid var(--line);
 }
 
-.skillName {
-  color: var(--text-h);
+.name {
+  margin: 0 0 var(--spacing-1);
+  font-size: 2.25rem;
+  line-height: 1;
+  color: var(--ink);
 }
 
-.badgeDemonstrated,
-.badgeDeclared {
-  font-size: 0.85em;
-  opacity: 0.8;
+.blurb {
+  max-width: 46ch;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
-.badgeDemonstrated {
-  color: var(--accent);
+/* Escala: línea base con marcas de altura variable */
+.ruler {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 1.75rem;
+  border-bottom: 1px solid var(--line);
 }
 
-.badgeDeclared {
-  color: var(--text);
+.tick {
+  width: 1px;
+  height: 0.5rem;
+  background: var(--line);
 }
 
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1.2em;
-  background-color: var(--accent);
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
-  margin-left: 8px;
+.tickUsed {
+  height: 100%;
+  width: 2px;
+  background: var(--ink);
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+.status {
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .row {
+    grid-template-columns: 1fr auto;
+    gap: var(--spacing-3);
+  }
+  .who { grid-column: 1 / -1; }
 }

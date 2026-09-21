@@ -1,0 +1,17 @@
+/* Fila sobre el header en pantallas angostas; fijos junto al header cuando hay margen libre */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 0;
+}
+
+@media (min-width: 1100px) {
+  .controls {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+    padding: 0;
+  }
+}

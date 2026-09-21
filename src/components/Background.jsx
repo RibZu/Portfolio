@@ -4,72 +4,84 @@ import { profile } from '../data/profile.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
 import { sortExperience } from '../lib/derive.js';
-import { currentLanguage } from '../lib/language.js';
-import { useScrollReveal } from '../hooks/useScrollReveal.js';
+import SectionHead from './SectionHead.jsx';
 import styles from './Background.module.css';
 
+const sorted = sortExperience(experience);
+const mainEntries = sorted.filter((e) => e.type !== 'certification');
+const certEntries = sorted.filter((e) => e.type === 'certification');
+const firstYear = Math.min(...experience.map((e) => Number(e.period.from)));
+
 export default function Background() {
-  const revealRef = useScrollReveal();
-  const sorted = sortExperience(experience);
-  const langTitle = currentLanguage === 'es' ? 'Idiomas' : 'Languages';
-  const presentText = currentLanguage === 'es' ? 'Presente' : 'Present';
-  const mainEntries = sorted.filter(e => e.type !== 'certification');
-  const certEntries = sorted.filter(e => e.type === 'certification');
-
   return (
-    <section id="background" className="section reveal-hidden" ref={revealRef}>
+    <section id="background" className="block" aria-labelledby="background-title">
       <div className="container">
-        <div className={styles.header}>
-          <span className="section-label">{currentLanguage === 'es' ? 'Trayectoria' : 'Background'}</span>
-          <h2 className="section-heading">{t(ui.headingBackground)}</h2>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.linkButton}>
-            LinkedIn <span className={styles.srOnly}>{t(ui.externalLink)}</span>
-          </a>
-        </div>
-        
-        <div className={styles.languagesSection}>
-          <h3 className={styles.languagesTitle}>{langTitle}</h3>
-          <ul className={styles.languagesList}>
-            {profile.spokenLanguages.map((lang, i) => (
-              <li key={i} className={styles.languageItem}>
-                <strong>{t(lang.name)}:</strong> {t(lang.level)}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SectionHead
+          id="background-title"
+          title={t(ui.headingBackground)}
+          meta={t(ui.backgroundMeta, firstYear)}
+        />
 
-        <h3 className={styles.experienceSubheading}>
-          {currentLanguage === 'es' ? 'Experiencia' : 'Experience'}
-        </h3>
-
-        <div className={styles.experienceList}>
-          {mainEntries.map(entry => (
-            <div key={entry.id} className={styles.experienceItem}>
-              <div className={styles.experienceHeader}>
-                <h4 className={styles.role}>{t(entry.role)}</h4>
-                <span className={styles.period}>
-                  {entry.period.from} - {entry.period.to || presentText}
-                </span>
-              </div>
-              <h5 className={styles.organisation}>{entry.organisation}</h5>
-              {entry.description && (
-                <p className={styles.description}>{t(entry.description)}</p>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.certificationsSection}>
-          <h3 className={styles.certificationsTitle}>
-            {currentLanguage === 'es' ? 'Certificaciones' : 'Certifications'}
-          </h3>
-          <div className={styles.certificationsPills}>
-            {certEntries.map(entry => (
-              <span key={entry.id} className={styles.certPill}>
-                {t(entry.role)} · {entry.period.from}
-              </span>
-            ))}
+        <div className={styles.layout}>
+          <div>
+            <ol className={styles.timeline}>
+              {mainEntries.map((entry) => {
+                const current = entry.period.to === null;
+                return (
+                  <li key={entry.id} className={`${styles.entry} ${current ? styles.entryCurrent : ''}`}>
+                    <p className={styles.period}>
+                      {entry.period.from} – {entry.period.to || t(ui.present)}
+                    </p>
+                    <h3 className={styles.role}>{t(entry.role)}</h3>
+                    <p className={styles.organisation}>
+                      {entry.url ? (
+                        <a href={entry.url} target="_blank" rel="noopener noreferrer">
+                          {entry.organisation}
+                          <span className="sr-only"> {t(ui.externalLink)}</span>
+                        </a>
+                      ) : (
+                        entry.organisation
+                      )}
+                    </p>
+                    {entry.description && <p className={styles.description}>{t(entry.description)}</p>}
+                  </li>
+                );
+              })}
+            </ol>
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
+              {t(ui.linkedinFull)}
+              <span className="sr-only"> {t(ui.externalLink)}</span>
+            </a>
           </div>
+
+          <aside className={styles.side}>
+            <section>
+              <h3 className={styles.sideTitle}>{t(ui.languagesTitle)}</h3>
+              <dl className={styles.rows}>
+                {profile.spokenLanguages.map((lang) => (
+                  <div key={lang.name.en} className={styles.rowItem}>
+                    <dt>{t(lang.name)}</dt>
+                    <dd>{t(lang.level)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+
+            <section>
+              <h3 className={styles.sideTitle}>{t(ui.certificationsTitle)}</h3>
+              <ul className={styles.certs}>
+                {certEntries.map((entry) => (
+                  <li key={entry.id} className={styles.cert}>
+                    <span className={styles.certYear}>{entry.period.from}</span>
+                    <span>
+                      {t(entry.role)}
+                      <span className={styles.certOrg}>{entry.organisation}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </aside>
         </div>
       </div>
     </section>

@@ -1,60 +1,84 @@
 .header {
+  --progress: 0;
+  --map-far: 0px;
+  --map-near: 0px;
+
   position: sticky;
-  top: 20px;
+  top: 1.25rem;
   z-index: 1000;
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  margin: 0 auto 20px auto;
   max-width: 800px;
-  padding: var(--spacing-3) 0;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  background: var(--surface);
-  transition: border-radius 0.3s ease;
+  margin: 0 auto 1.25rem;
+  min-height: 3.75rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sheet);
 }
 
-/* Bouncing ball */
-.ball {
+/* Recorta las capas del mapa sin recortar el menú desplegable */
+.clip {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent), 0 0 14px rgba(216, 180, 226, 0.4);
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
   pointer-events: none;
-  --ball-travel: calc(min(100vw - 60px, 770px));
-  animation: ballBounce 3s ease-in-out infinite alternate;
-  will-change: transform;
-  transform: translateX(10px) translateY(-50%);
 }
 
-@keyframes ballBounce {
-  from { transform: translateX(10px) translateY(-50%); }
-  to   { transform: translateX(var(--ball-travel)) translateY(-50%); }
+/*
+ * Mapa de curvas de nivel: la imagen es una máscara, así toma el color del tema.
+ * Dos capas con distinta escala y velocidad dan profundidad al recorrer la página.
+ */
+.map {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--line);
+  mask-image: url('/img/header-contours.svg');
+  mask-repeat: repeat-x;
+  -webkit-mask-image: url('/img/header-contours.svg');
+  -webkit-mask-repeat: repeat-x;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .ball {
-    animation: none;
-    opacity: 0.4;
-    transform: translateX(10px) translateY(-50%);
-  }
+.mapFar {
+  opacity: 0.32;
+  mask-size: 1200px 80px;
+  -webkit-mask-size: 1200px 80px;
+  mask-position: var(--map-far) 50%;
+  -webkit-mask-position: var(--map-far) 50%;
+}
+
+.mapNear {
+  opacity: 0.2;
+  mask-size: 2000px 133px;
+  -webkit-mask-size: 2000px 133px;
+  mask-position: var(--map-near) 30%;
+  -webkit-mask-position: var(--map-near) 30%;
+}
+
+/* Cota inferior: se rellena con el progreso de lectura */
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--mark);
+  transform: scaleX(var(--progress));
+  transform-origin: left;
+  pointer-events: none;
 }
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  width: 100%;
 }
 
 .toggle {
   display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
   padding: var(--spacing-2);
   position: absolute;
   left: 0;
@@ -64,7 +88,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--text-h);
+  background-color: var(--ink);
   position: relative;
 }
 
@@ -74,7 +98,7 @@
   position: absolute;
   width: 24px;
   height: 2px;
-  background-color: var(--text-h);
+  background-color: var(--ink);
   left: 0;
 }
 
@@ -98,31 +122,80 @@
 }
 
 .navLink {
-  color: var(--text);
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: var(--ink);
+  font-size: 0.9375rem;
   font-weight: 500;
-  letter-spacing: 1px;
   text-decoration: none;
-  transition: color 0.2s ease;
+}
+
+/* Sección activa: subrayado en color marcador */
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--mark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
 }
 
 .navLink:hover,
 .navLink:focus-visible {
-  color: var(--accent);
+  color: var(--ink);
   text-decoration: none;
 }
 
-@media (max-width: 991px) {
-  .toggle { display: block; }
+.navLink:hover::after,
+.navLink[aria-current='true']::after {
+  transform: scaleX(1);
+}
 
+.current { display: none; }
+
+@media (max-width: 991px) {
+  .header {
+    display: block;
+    margin-inline: var(--spacing-3);
+    padding-block: 0.5rem;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 var(--spacing-3);
+  }
+
+  .toggle { display: block; position: static; }
+
+  .current {
+    display: block;
+    margin-left: var(--spacing-3);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .container { position: static; }
+
+  /* Desplegable: no empuja el contenido de la página */
   .nav {
     display: none;
-    width: 100%;
+    position: absolute;
+    top: calc(100% + 0.375rem);
+    left: 0;
+    right: 0;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: var(--spacing-4);
-    gap: var(--spacing-4);
+    padding: var(--spacing-3);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--sheet);
   }
 
   .navOpen { display: flex; }
@@ -131,12 +204,5 @@
     flex-direction: column;
     gap: var(--spacing-3);
     width: 100%;
-    padding: 0 var(--spacing-4);
   }
-
-  .headerOpen {
-    border-radius: 24px;
-  }
-
-  .ball { display: none; }
 }

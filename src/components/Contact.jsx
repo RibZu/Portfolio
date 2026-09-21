@@ -1,35 +1,44 @@
 import React from 'react';
-import { useScrollReveal } from '../hooks/useScrollReveal.js';
 import { profile } from '../data/profile.js';
 import { ui } from '../data/ui.js';
 import { t } from '../lib/content.js';
-import { currentLanguage } from '../lib/language.js';
+import SectionHead from './SectionHead.jsx';
 import styles from './Contact.module.css';
 
+const bareUrl = (url) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+
 export default function Contact() {
-  const revealRef = useScrollReveal();
+  const channels = [
+    { label: t(ui.contactEmail), value: profile.email, href: `mailto:${profile.email}`, external: false },
+    { label: 'GitHub', value: bareUrl(profile.github), href: profile.github, external: true },
+    { label: 'LinkedIn', value: bareUrl(profile.linkedin), href: profile.linkedin, external: true },
+  ];
 
   return (
-    <section id="contact" className={`section ${styles.contactSection} reveal-hidden`} ref={revealRef}>
+    <section id="contact" className="block" aria-labelledby="contact-title">
       <div className="container">
-        <span className="section-label">{currentLanguage === 'es' ? 'Contacto' : 'Contact'}</span>
-        <h2 className="section-heading">{t(ui.headingContact)}</h2>
-        <div className={styles.contactBody}>
-          <div className={styles.emailWrapper}>
-            <a href={`mailto:${profile.email}`} className={styles.primaryButton}>
-              Email Me
-            </a>
-            <p className={styles.emailText}>{profile.email}</p>
-          </div>
-          <div className={styles.socialLinks}>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-              GitHub <span className={styles.srOnly}>{t(ui.externalLink)}</span>
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.secondaryButton}>
-              LinkedIn <span className={styles.srOnly}>{t(ui.externalLink)}</span>
-            </a>
-          </div>
-        </div>
+        <SectionHead
+          id="contact-title"
+          title={t(ui.headingContact)}
+          meta={t(ui.contactMeta)}
+        />
+        <p className={styles.lead}>{t(ui.contactLead)}</p>
+        <ul className={styles.channels}>
+          {channels.map((channel) => (
+            <li key={channel.label}>
+              <a
+                href={channel.href}
+                className={styles.row}
+                {...(channel.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                <span className={styles.label}>{channel.label}</span>
+                <span className={styles.value}>{channel.value}</span>
+                {channel.external && <span className="sr-only">{t(ui.externalLink)}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p className={styles.footer}>© {new Date().getFullYear()} {profile.name} Zunino</p>
       </div>
     </section>
   );

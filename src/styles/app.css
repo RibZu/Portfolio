@@ -1,16 +1,23 @@
 @import "./tokens.css";
 @import "./globals.css";
 
-/* 
- * NOTE: The accent-base color (#5980a6) must never be used for normal-size text
- * as it reaches only 3.4:1 contrast ratio against the surface, violating FR-027.
- */
+/* Scroll Reveal (solo Hero) */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-@media (prefers-reduced-motion: reduce) { 
-  * { 
-    animation-duration: 0.01ms !important; 
-    animation-iteration-count: 1 !important; 
-    transition-duration: 0.01ms !important; 
-    scroll-behavior: auto !important; 
-  } 
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

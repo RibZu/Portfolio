@@ -1,0 +1,54 @@
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+/* Línea de cota: trazo con remate oblicuo en cada extremo */
+.dimension {
+  position: relative;
+  flex: 1;
+  min-width: 1.5rem;
+  height: 1px;
+  background: var(--line);
+  margin-top: 0.4em;
+}
+
+.dimension::before,
+.dimension::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 1px;
+  height: 13px;
+  background: var(--line);
+}
+
+.dimension::before { left: 0; transform: rotate(35deg); }
+.dimension::after { right: 0; transform: rotate(35deg); }
+
+.meta {
+  margin-top: 0.4em;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 540px) {
+  .head {
+    flex-wrap: wrap;
+    row-gap: var(--spacing-2);
+  }
+  .dimension { flex-basis: 100%; order: 3; margin-top: 0; }
+  .meta { margin-top: 0; }
+}

@@ -5,10 +5,14 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family-body);
-  color: var(--color-text-primary);
-  background-color: var(--color-surface);
+  color: var(--ink);
+  background-color: var(--paper);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -29,6 +33,7 @@ button {
   font-family: inherit;
   background: none;
   border: none;
+  color: inherit;
 }
 
 /* Typography Foundation */
@@ -43,67 +48,41 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Layout Utilities */
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 var(--spacing-5);
 }
 
+/* Hero (usa .section) */
 .section {
   padding: var(--spacing-8) 0;
 }
 
-.section-title {
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-6);
-  position: relative;
-  display: inline-block;
+/* Secciones del sitio bajo el Hero: mismo ritmo vertical en todas */
+.block {
+  padding-block: clamp(4rem, 9vw, 7rem);
+  scroll-margin-top: 5.5rem;
 }
 
-.section-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--accent);
-  margin-bottom: 8px;
-}
-
-.section-heading {
-  font-family: var(--font-family-display);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 700;
-  color: var(--text-h);
-  margin: 0 0 var(--spacing-6) 0;
-  letter-spacing: -0.02em;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.section-heading::after {
-  content: '';
+.sr-only {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* Focus rings for accessibility */
 *:focus-visible {
-  outline: 3px solid var(--color-accent-light);
-  outline-offset: 2px;
-}
-/* Scroll Reveal Utilities */
-.reveal-hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  outline: 2px solid var(--mark);
+  outline-offset: 3px;
 }
 
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
+@media (max-width: 540px) {
+  .container {
+    padding-inline: var(--spacing-3);
+  }
 }

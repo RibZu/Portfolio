@@ -1,29 +1,35 @@
+/*
+ * "Plano": un solo juego de tokens, dos temas.
+ * Oscuro = cianotipo, claro = papel de dibujo.
+ * Los nombres --color-* los usa el Hero; apuntan a los mismos valores.
+ */
 :root {
-  /* Unified visual identity palette (feature 009) */
-  --text: #a0a0a0;
-  --text-h: #ffffff;
-  --bg: #0f1015;
-  --surface: #13141a;
-  --border: #2a2b36;
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --code-bg: #1c1d26;
-  --accent: #d8b4e2;
-  --accent-bg: rgba(216, 180, 226, 0.1);
-  --accent-border: rgba(216, 180, 226, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.5) 0 10px 15px -3px, rgba(0, 0, 0, 0.3) 0 4px 6px -2px;
+  color-scheme: dark;
 
-  --color-surface: #1d2d3d;
-  --color-accent-base: #5980a6;
-  --color-accent-light: #749dc4;
-  --color-border: #b9cfe2;
-  --color-text-secondary: #d6e5f2;
-  --color-text-primary: #f2f7fb;
-  --color-display: #f2f2f3;
+  --paper: #14283c;
+  --sheet: #1b3550;
+  --ink: #e8f0f7;
+  --ink-2: #b2c6d9;
+  --blue: #7fa6c9;
+  --blue-mid: #5980a6;
+  --line: #5f87ab;
+  --line-strong: #a9c3da;
+  --line-soft: rgba(127, 166, 201, 0.28);
+  --mark: #ff8a5b;
+  --on-mark: #1b0b04;
+
+  --color-surface: var(--paper);
+  --color-display: var(--ink);
+  --color-text-primary: var(--ink);
+  --color-text-secondary: var(--ink-2);
+  --color-accent-light: var(--blue);
+  --color-accent-base: var(--blue-mid);
+  --color-border: var(--line-strong);
 
   --font-family-display: "Display Condensed", system-ui, sans-serif;
-  --font-family-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-family-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --font-family-body: "Schibsted Grotesk Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius: 2px;
 
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -41,6 +47,41 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
   --font-size-4xl: 3rem;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --paper: #f2f5f7;
+  --sheet: #ffffff;
+  --ink: #0f2438;
+  --ink-2: #3d586f;
+  --blue: #17406b;
+  --blue-mid: #3f6e9e;
+  --line: #6b89a5;
+  --line-strong: #4c6b88;
+  --line-soft: rgba(23, 64, 107, 0.2);
+  --mark: #c23b0f;
+  --on-mark: #ffffff;
+}
+
+/* Sin JS: seguir la preferencia del sistema */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+
+    --paper: #f2f5f7;
+    --sheet: #ffffff;
+    --ink: #0f2438;
+    --ink-2: #3d586f;
+    --blue: #17406b;
+    --blue-mid: #3f6e9e;
+    --line: #6b89a5;
+    --line-strong: #4c6b88;
+    --line-soft: rgba(23, 64, 107, 0.2);
+    --mark: #c23b0f;
+    --on-mark: #ffffff;
+  }
 }
 
 @font-face {
