@@ -19,7 +19,7 @@ export const projects = [
       es: 'Sistema de información geográfica para administrar datos geoespaciales críticos.', 
       en: 'Geographic information system to manage critical geospatial data.' 
     },
-    technologies: ['go', 'postgresql'],
+    technologies: ['go', 'javascript', 'postgresql'],
     repo: 'https://github.com/RibZu/GIS-LACIS',
     order: 2,
   },
@@ -30,7 +30,7 @@ export const projects = [
       es: 'Plataforma Frontend para la visualización y búsqueda eficiente de normativas universitarias.', 
       en: 'Frontend platform for viewing and efficiently searching university regulations.' 
     },
-    technologies: ['react'],
+    technologies: ['javascript', 'react'],
     repo: 'https://github.com/RibZu/DigestoUNSL',
     order: 3,
   },

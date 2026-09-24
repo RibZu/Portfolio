@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { profile, skills } from '../src/data/profile';
 import { technologies } from '../src/data/technologies';
 import { projects } from '../src/data/projects';
@@ -45,9 +47,22 @@ describe('Content schema validation', () => {
     });
   });
 
+  it('CVs are valid', () => {
+    expect(profile.cv.map(cv => cv.id)).toEqual(['es', 'en']);
+    profile.cv.forEach(cv => {
+      expect(cv.label).not.toBe('');
+      checkLocalized(cv.name);
+      expect(cv.href.startsWith('/cv/')).toBe(true);
+      expect(cv.href.endsWith('.pdf')).toBe(true);
+      expect(existsSync(resolve('public', cv.href.slice(1)))).toBe(true);
+    });
+    expect(new Set(profile.cv.map(cv => cv.href)).size).toBe(profile.cv.length);
+    checkLocalized(ui.cvView);
+  });
+
   it('Technologies are valid', () => {
     const ids = new Set();
-    const categories = ['language', 'framework', 'database', 'platform', 'tooling'];
+    const categories = ['language', 'framework', 'database', 'tooling'];
     
     technologies.forEach(tech => {
       expect(ids.has(tech.id)).toBe(false);

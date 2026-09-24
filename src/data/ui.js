@@ -1,11 +1,11 @@
 export const ui = {
   navProjects: { es: "Proyectos", en: "Projects" },
-  navSkills: { es: "Habilidades", en: "Skills" },
+  navSkills: { es: "Tecnologías", en: "Technologies" },
   navBackground: { es: "Experiencia", en: "Background" },
   navContact: { es: "Contacto", en: "Contact" },
   navToggle: { es: "Abrir o cerrar la navegación", en: "Open or close navigation" },
   headingProjects: { es: "Proyectos", en: "Projects" },
-  headingSkills: { es: "Habilidades", en: "Skills" },
+  headingSkills: { es: "Tecnologías", en: "Technologies" },
   headingBackground: { es: "Experiencia", en: "Background" },
   headingContact: { es: "Contacto", en: "Contact" },
   filterAll: { es: "Todas", en: "All" },
@@ -31,10 +31,12 @@ export const ui = {
 
 
   present: { es: "Presente", en: "Present" },
+  teamWork: { es: "Trabajo en grupo", en: "Team work" },
   languagesTitle: { es: "Idiomas", en: "Languages" },
   degreesTitle: { es: "Títulos", en: "Degrees" },
   certificationsTitle: { es: "Certificaciones", en: "Certifications" },
   linkedinFull: { es: "Si querés saber más, buscame en LinkedIn", en: "To know more, find me on LinkedIn" },
+  cvView: { es: "Ver CV", en: "View CV" },
 
   contactEmail: { es: "Email", en: "Email" },
 };

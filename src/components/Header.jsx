@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './Header.module.css';
 import { t } from '../lib/content.js';
 import { ui } from '../data/ui.js';
+import Controls from './Controls.jsx';
 
 const links = [
   { id: 'skills', label: ui.navSkills },
@@ -81,6 +82,7 @@ export default function Header() {
         <span className={styles.current} aria-hidden="true">
           {activeId ? t(links.find((l) => l.id === activeId).label) : null}
         </span>
+        <Controls />
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <ul className={styles.navList}>
             {links.map(({ id, label }) => (

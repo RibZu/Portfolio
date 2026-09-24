@@ -17,10 +17,10 @@ describe('derive functions', () => {
   ];
 
   const mockTechs = [
-    { id: 'react' },
-    { id: 'node' },
-    { id: 'go' },
-    { id: 'php' }
+    { id: 'react', category: 'framework' },
+    { id: 'node', category: 'tooling' },
+    { id: 'go', category: 'language' },
+    { id: 'php', category: 'language' }
   ];
 
   it('projectsByTechnology maps correctly', () => {
@@ -38,11 +38,30 @@ describe('derive functions', () => {
     expect(counts['php']).toBeUndefined();
   });
 
-  it('visibleFilters returns tech with >0 projects, sorted by count desc', () => {
+  it('visibleFilters returns tech with >0 projects, grouped by category', () => {
     const filters = visibleFilters(mockProjects, mockTechs);
-    expect(filters.length).toBe(3); // php should be omitted
-    expect(filters[0].id).toBe('react'); // or 'go', both have 2
-    expect(filters.map(f => f.id)).not.toContain('php');
+    expect(filters.map(f => f.id)).toEqual(['go', 'react', 'node']); // language, framework, tooling; php omitted
+  });
+
+  it('visibleFilters keeps array order within a category', () => {
+    const projects = [
+      { id: 'a', technologies: ['php', 'go', 'javascript'] }
+    ];
+    const techs = [
+      { id: 'javascript', category: 'language' },
+      { id: 'go', category: 'language' },
+      { id: 'php', category: 'language' }
+    ];
+    expect(visibleFilters(projects, techs).map(f => f.id)).toEqual(['javascript', 'go', 'php']);
+  });
+
+  it('visibleFilters puts unknown categories last', () => {
+    const projects = [{ id: 'a', technologies: ['x', 'go'] }];
+    const techs = [
+      { id: 'x', category: 'mystery' },
+      { id: 'go', category: 'language' }
+    ];
+    expect(visibleFilters(projects, techs).map(f => f.id)).toEqual(['go', 'x']);
   });
 
   it('filterProjects sorts by featured desc, order asc, name asc', () => {

@@ -30,26 +30,38 @@ export default function Background() {
                     <p className={styles.period}>
                       {entry.period.from} – {entry.period.to || t(ui.present)}
                     </p>
-                    <h3 className={styles.role}>{t(entry.role)}</h3>
-                    <p className={styles.organisation}>
-                      {entry.url ? (
+                    <div className={styles.roleRow}>
+                      <h3 className={styles.role}>{t(entry.role)}</h3>
+                      {entry.team && <span className={styles.teamTag}>{t(ui.teamWork)}</span>}
+                    </div>
+                    <p className={styles.organisation}>{entry.organisation}</p>
+                    {entry.url && (
+                      <p className={styles.url}>
                         <a href={entry.url} target="_blank" rel="noopener noreferrer">
-                          {entry.organisation}
+                          {entry.url.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                           <span className="sr-only"> {t(ui.externalLink)}</span>
                         </a>
-                      ) : (
-                        entry.organisation
-                      )}
-                    </p>
-                    {entry.description && <p className={styles.description}>{t(entry.description)}</p>}
+                      </p>
+                    )}
+                    {entry.description &&<p className={styles.description}>{t(entry.description)}</p>}
                   </li>
                 );
               })}
             </ol>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
-              {t(ui.linkedinFull)}
-              <span className="sr-only"> {t(ui.externalLink)}</span>
-            </a>
+            <div className={styles.links}>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
+                {t(ui.linkedinFull)}
+                <span className="sr-only"> {t(ui.externalLink)}</span>
+              </a>
+              <div className={styles.cvGroup}>
+                {profile.cv.map((cv) => (
+                  <a key={cv.id} href={cv.href} target="_blank" rel="noopener noreferrer" className={styles.cvBtn}>
+                    {t(ui.cvView)} · {cv.label}
+                    <span className="sr-only"> {t(cv.name)}, PDF {t(ui.externalLink)}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <aside className={styles.side}>

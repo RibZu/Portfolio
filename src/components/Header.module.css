@@ -166,7 +166,7 @@
   }
 
   .container {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     padding: 0 var(--spacing-3);
   }
@@ -175,6 +175,11 @@
 
   .current {
     display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     margin-left: var(--spacing-3);
     font-size: 1.0625rem;
     font-weight: 500;
@@ -205,4 +210,9 @@
     gap: var(--spacing-3);
     width: 100%;
   }
+}
+
+/* Nav horizontal centrada: deja libre el lado derecho para los controles */
+@media (min-width: 992px) and (max-width: 1299px) {
+  .nav { padding-inline: 6rem; }
 }

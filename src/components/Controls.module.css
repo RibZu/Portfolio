@@ -1,9 +1,20 @@
-/* Fila sobre el header en pantallas angostas; fijos junto al header cuando hay margen libre */
+/* Dentro de la barra del header: a la derecha en mobile, fijos junto a la barra cuando hay margen libre */
 .controls {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1299px) {
+  .controls {
+    position: absolute;
+    right: var(--spacing-3);
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 1300px) {
@@ -13,6 +24,7 @@
     top: 2rem;
     right: 1.5rem;
     z-index: 999;
-    padding: 0;
+    margin-left: 0;
+    transform: none;
   }
 }

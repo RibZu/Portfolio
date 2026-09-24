@@ -19,11 +19,21 @@ export function technologyCounts(projects) {
   return map;
 }
 
+// Orden de los grupos en filtros y constelación; dentro de cada grupo manda el orden del array `technologies`.
+export const CATEGORY_ORDER = ['language', 'framework', 'database', 'tooling'];
+
+const categoryRank = (tech) => {
+  const rank = CATEGORY_ORDER.indexOf(tech.category);
+  return rank === -1 ? CATEGORY_ORDER.length : rank;
+};
+
 export function visibleFilters(projects, technologies) {
   const counts = technologyCounts(projects);
-  const visibleIds = Object.keys(counts);
-  const visibleTechs = technologies.filter(t => visibleIds.includes(t.id));
-  return visibleTechs.sort((a, b) => counts[b.id] - counts[a.id]);
+  return technologies
+    .map((tech, index) => ({ tech, index }))
+    .filter(({ tech }) => counts[tech.id])
+    .sort((a, b) => categoryRank(a.tech) - categoryRank(b.tech) || a.index - b.index)
+    .map(({ tech }) => tech);
 }
 
 export function filterProjects(projects, technologyId) {

@@ -22,3 +22,10 @@
   color: var(--paper);
   text-decoration: none;
 }
+
+@media (max-width: 991px) {
+  .langSwitch {
+    min-width: 44px;
+    height: 44px;
+  }
+}

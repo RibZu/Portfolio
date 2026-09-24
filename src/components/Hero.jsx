@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
         <div className={styles.rightColumn}>
           <div className={styles.visualContainer}>
-            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.abstractSvg}>
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.abstractSvg} aria-hidden="true" focusable="false">
               {/* Abstract decorative elements */}
               <circle cx="200" cy="200" r="160" stroke="var(--color-accent-base)" strokeWidth="1" strokeDasharray="4 8" opacity="0.6" />
               <circle cx="200" cy="200" r="120" stroke="var(--color-accent-light)" strokeWidth="2" opacity="0.3" />

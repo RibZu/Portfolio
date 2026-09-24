@@ -15,3 +15,10 @@
   background: var(--ink);
   color: var(--paper);
 }
+
+@media (max-width: 991px) {
+  .toggle {
+    width: 44px;
+    height: 44px;
+  }
+}

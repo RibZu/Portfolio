@@ -1,4 +1,18 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "cv-es.simonriberi.dev" }],
+      "destination": "/cv/CV_Simon_Riberi_ES.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "cv-en.simonriberi.dev" }],
+      "destination": "/cv/CV_Simon_Riberi_EN.pdf",
+      "permanent": false
+    }
+  ]
 }
