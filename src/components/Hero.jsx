@@ -19,13 +19,16 @@ export default function Hero() {
           </p>
           <div className={styles.actions}>
             <a href="#contact" className={styles.btn}>
-              {t(ui.navContact)}
+              <span className="hex-map hex-map-far" aria-hidden="true" /><span className="hex-map hex-map-near" aria-hidden="true" />
+              <span className={styles.btnLabel}>{t(ui.navContact)}</span>
             </a>
             <a href={profile.github} className={styles.btn} target="_blank" rel="noopener noreferrer">
-              GitHub <span className={styles.visuallyHidden}>{t(ui.externalLink)}</span>
+              <span className="hex-map hex-map-far" aria-hidden="true" /><span className="hex-map hex-map-near" aria-hidden="true" />
+              <span className={styles.btnLabel}>GitHub <span className={styles.visuallyHidden}>{t(ui.externalLink)}</span></span>
             </a>
             <a href={profile.linkedin} className={styles.btn} target="_blank" rel="noopener noreferrer">
-              LinkedIn <span className={styles.visuallyHidden}>{t(ui.externalLink)}</span>
+              <span className="hex-map hex-map-far" aria-hidden="true" /><span className="hex-map hex-map-near" aria-hidden="true" />
+              <span className={styles.btnLabel}>LinkedIn <span className={styles.visuallyHidden}>{t(ui.externalLink)}</span></span>
             </a>
           </div>
         </div>
@@ -46,12 +49,16 @@ export default function Hero() {
               
               {/* Connecting Nodes */}
               <circle cx="200" cy="60" r="6" fill="var(--color-accent-light)" className={styles.svgPulse} />
-              <circle cx="321" cy="130" r="5" fill="var(--color-text-secondary)" />
+              <circle cx="321" cy="130" r="5" fill="var(--color-text-secondary)" className={styles.svgPulse} style={{ animationDelay: '0.5s' }} />
               <circle cx="321" cy="270" r="7" fill="var(--color-border)" className={styles.svgPulse} style={{ animationDelay: '1s' }} />
-              <circle cx="200" cy="340" r="5" fill="var(--color-accent-base)" />
-              <circle cx="79" cy="270" r="6" fill="var(--color-accent-light)" />
-              <circle cx="79" cy="130" r="5" fill="var(--color-text-primary)" className={styles.svgPulse} style={{ animationDelay: '0.5s' }} />
-              
+              <circle cx="200" cy="340" r="5" fill="var(--color-accent-base)" className={styles.svgPulse} style={{ animationDelay: '1.5s' }} />
+              <circle cx="79" cy="270" r="6" fill="var(--color-accent-light)" className={styles.svgPulse} style={{ animationDelay: '2s' }} />
+              <circle cx="79" cy="130" r="5" fill="var(--color-text-primary)" className={styles.svgPulse} style={{ animationDelay: '2.5s' }} />
+
+              {/* Pelotita que recorre el hexágono, con su estela suave */}
+              <circle cx="0" cy="0" r="12" fill="var(--color-accent-light)" opacity="0.25" className={styles.svgBall} />
+              <circle cx="0" cy="0" r="5" fill="var(--color-display)" className={styles.svgBall} />
+
               {/* Abstract code lines */}
               <rect x="130" y="270" width="40" height="4" rx="2" fill="var(--color-accent-light)" opacity="0.5" />
               <rect x="130" y="285" width="80" height="4" rx="2" fill="var(--color-border)" opacity="0.3" />

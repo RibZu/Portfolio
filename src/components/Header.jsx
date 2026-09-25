@@ -43,8 +43,10 @@ export default function Header() {
       el.style.setProperty('--progress', max > 0 ? Math.min(1, Math.max(0, y / max)).toFixed(4) : '0');
       setActiveId(currentSection(y));
       if (!reduceMotion) {
-        el.style.setProperty('--map-far', `${(-y * 0.3).toFixed(1)}px`);
-        el.style.setProperty('--map-near', `${(-y * 0.75).toFixed(1)}px`);
+        // En <html> para que también los botones del Hero muevan su textura con el scroll
+        const root = document.documentElement.style;
+        root.setProperty('--map-far', `${(-y * 0.3).toFixed(1)}px`);
+        root.setProperty('--map-near', `${(-y * 0.75).toFixed(1)}px`);
       }
     };
     const onScroll = () => {
@@ -66,8 +68,8 @@ export default function Header() {
   return (
     <header ref={headerRef} className={`${styles.header} ${isMenuOpen ? styles.headerOpen : ''}`}>
       <div className={styles.clip} aria-hidden="true">
-        <span className={`${styles.map} ${styles.mapFar}`} />
-        <span className={`${styles.map} ${styles.mapNear}`} />
+        <span className="hex-map hex-map-far" />
+        <span className="hex-map hex-map-near" />
         <span className={styles.progress} />
       </div>
       <div className={`container ${styles.container}`}>

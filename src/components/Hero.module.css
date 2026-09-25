@@ -74,13 +74,25 @@
     transform: scale(1);
   }
   50% {
-    opacity: 0.5;
-    transform: scale(0.8);
+    opacity: 0.4;
+    transform: scale(1.7);
   }
 }
 
+/* La pelotita sigue el contorno del hexágono del SVG (mismo trazo, mismo viewBox) */
+.svgBall {
+  offset-path: path('M200 60 L321 130 L321 270 L200 340 L79 270 L79 130 Z');
+  offset-rotate: 0deg;
+  animation: travel 9s linear infinite;
+}
+
+@keyframes travel {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .svgFloat1, .svgFloat2, .svgPulse {
+  .svgFloat1, .svgFloat2, .svgPulse, .svgBall {
     animation: none;
   }
 }
@@ -138,6 +150,8 @@
 
 /* Mismos botones rectangulares que "Ver CV": borde de línea, esquinas casi rectas, relleno de tinta al pasar */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -161,6 +175,19 @@
   border-color: var(--ink);
   color: var(--paper);
   text-decoration: none;
+}
+
+/* Cada botón muestra otro tramo de la retícula, y al invertirse la textura se invierte también */
+.btn:nth-child(2) { --tex-x: -180px; }
+.btn:nth-child(3) { --tex-x: -360px; }
+
+.btn:hover :global(.hex-map),
+.btn:focus-visible :global(.hex-map) {
+  background: var(--paper);
+}
+
+.btnLabel {
+  position: relative;
 }
 
 .visuallyHidden {

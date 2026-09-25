@@ -94,3 +94,36 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius);
   background: var(--sheet);
 }
+
+/*
+ * Retícula hexagonal del header, reutilizable (botones del Hero incluidos).
+ * La imagen es una máscara, así toma el color del tema. Dos capas con distinta escala y velocidad
+ * dan profundidad al recorrer la página; --map-far / --map-near los actualiza el scroll en <html>.
+ * --tex-x desplaza la textura de cada elemento para que no se repita idéntica.
+ */
+.hex-map {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--line);
+  mask-image: url('/img/header-pattern.svg');
+  mask-repeat: repeat-x;
+  -webkit-mask-image: url('/img/header-pattern.svg');
+  -webkit-mask-repeat: repeat-x;
+}
+
+.hex-map-far {
+  opacity: 0.32;
+  mask-size: 1200px 80px;
+  -webkit-mask-size: 1200px 80px;
+  mask-position: calc(var(--map-far, 0px) + var(--tex-x, 0px)) 50%;
+  -webkit-mask-position: calc(var(--map-far, 0px) + var(--tex-x, 0px)) 50%;
+}
+
+.hex-map-near {
+  opacity: 0.2;
+  mask-size: 2000px 133px;
+  -webkit-mask-size: 2000px 133px;
+  mask-position: calc(var(--map-near, 0px) + var(--tex-x, 0px)) 30%;
+  -webkit-mask-position: calc(var(--map-near, 0px) + var(--tex-x, 0px)) 30%;
+}

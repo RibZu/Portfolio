@@ -1,7 +1,5 @@
 .header {
   --progress: 0;
-  --map-far: 0px;
-  --map-near: 0px;
 
   position: sticky;
   top: 1.25rem;
@@ -23,37 +21,6 @@
   overflow: hidden;
   border-radius: inherit;
   pointer-events: none;
-}
-
-/*
- * Retícula hexagonal: la imagen es una máscara, así toma el color del tema.
- * Dos capas con distinta escala y velocidad dan profundidad al recorrer la página.
- */
-.map {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: var(--line);
-  mask-image: url('/img/header-pattern.svg');
-  mask-repeat: repeat-x;
-  -webkit-mask-image: url('/img/header-pattern.svg');
-  -webkit-mask-repeat: repeat-x;
-}
-
-.mapFar {
-  opacity: 0.32;
-  mask-size: 1200px 80px;
-  -webkit-mask-size: 1200px 80px;
-  mask-position: var(--map-far) 50%;
-  -webkit-mask-position: var(--map-far) 50%;
-}
-
-.mapNear {
-  opacity: 0.2;
-  mask-size: 2000px 133px;
-  -webkit-mask-size: 2000px 133px;
-  mask-position: var(--map-near) 30%;
-  -webkit-mask-position: var(--map-near) 30%;
 }
 
 /* Cota inferior: se rellena con el progreso de lectura */
