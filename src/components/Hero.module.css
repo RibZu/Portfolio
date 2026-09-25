@@ -136,44 +136,30 @@
   flex-wrap: wrap;
 }
 
+/* Mismos botones rectangulares que "Ver CV": borde de línea, esquinas casi rectas, relleno de tinta al pasar */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-2) var(--spacing-4);
-  font-size: var(--font-size-base);
+  min-height: 48px;
+  padding: 0.6rem 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sheet);
+  color: var(--ink);
+  font-size: 1.0625rem;
   font-weight: 500;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
   cursor: pointer;
-  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.btnPrimary {
-  background-color: var(--color-accent-light);
-  color: var(--color-surface);
-  border: 1px solid var(--color-accent-light);
-}
-
-.btnPrimary:hover,
-.btnPrimary:focus-visible {
-  background-color: var(--color-display);
-  color: var(--color-surface);
-  border-color: var(--color-display);
-  text-decoration: none;
-}
-
-.btnSecondary {
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-}
-
-.btnSecondary:hover,
-.btnSecondary:focus-visible {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--color-display);
-  border-color: var(--color-text-primary);
+.btn:hover,
+.btn:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
   text-decoration: none;
 }
 

@@ -3,8 +3,8 @@ export const projects = [
     id: 'api-digesto',
     name: 'API Digesto',
     description: { 
-      es: 'API de gestión documental y normativa para concursos docentes, que estandariza el manejo de reglamentaciones con alta disponibilidad.', 
-      en: 'Document management and regulatory API for teaching contests, standardizing regulation handling with high availability.' 
+      es: 'API REST en Go que expone los llamados a concursos docentes de la UNSL: lee en paralelo los feeds RSS de cada facultad y los devuelve como JSON, listos para consumir.', 
+      en: 'REST API in Go that exposes UNSL teaching-position contests: it reads the RSS feeds of each faculty in parallel and returns them as ready-to-use JSON.' 
     },
     technologies: ['go', 'docker'],
     repo: 'https://github.com/RibZu/API-DIGESTO',
@@ -16,8 +16,8 @@ export const projects = [
     id: 'gis-lacis',
     name: 'GIS-LACIS',
     description: { 
-      es: 'Sistema de información geográfica para administrar datos geoespaciales críticos.', 
-      en: 'Geographic information system to manage critical geospatial data.' 
+      es: 'Aplicación web en Go con PostgreSQL y renderizado en servidor para gestionar el sitio de un laboratorio: proyectos, tesis, integrantes, premios y empresas colaboradoras, con panel de administración por roles.', 
+      en: 'Web application in Go with PostgreSQL and server-side rendering to manage the site of a lab: projects, theses, members, awards and partner companies, with a role-based admin panel.' 
     },
     technologies: ['go', 'javascript', 'postgresql'],
     repo: 'https://github.com/RibZu/GIS-LACIS',
@@ -25,10 +25,10 @@ export const projects = [
   },
   {
     id: 'digesto-unsl',
-    name: 'DigestoUNSL',
+    name: 'Digesto UNSL',
     description: { 
-      es: 'Plataforma Frontend para la visualización y búsqueda eficiente de normativas universitarias.', 
-      en: 'Frontend platform for viewing and efficiently searching university regulations.' 
+      es: 'SPA en React que reemplaza el sitio legacy en PHP del Digesto Administrativo de la UNSL: búsqueda de documentos, novedades, concursos y planes de estudio, más un panel administrativo protegido.', 
+      en: 'React SPA replacing the legacy PHP site of the UNSL Administrative Digest: search for documents, news, contests and study plans, plus a protected admin panel.' 
     },
     technologies: ['javascript', 'react'],
     repo: 'https://github.com/RibZu/DigestoUNSL',
@@ -36,10 +36,10 @@ export const projects = [
   },
   {
     id: 'my-car-app',
-    name: 'MyCarApp',
+    name: 'My Car App',
     description: { 
-      es: 'Aplicación para el seguimiento de mantenimiento vehicular y gestión de gastos.', 
-      en: 'Application for tracking vehicle maintenance and managing expenses.' 
+      es: 'Sistema web de alquiler de vehículos en PHP y CodeIgniter: catálogo público, reservas con calendario de disponibilidad y panel de administración para flota, clientes, alquileres y reportes.', 
+      en: 'Vehicle rental web system in PHP and CodeIgniter: public catalog, bookings with an availability calendar, and an admin panel for fleet, customers, rentals and reports.' 
     },
     technologies: ['php', 'mysql', 'javascript'],
     repo: 'https://github.com/RibZu/MyCarApp',
@@ -48,10 +48,10 @@ export const projects = [
   },
   {
     id: 'my-car-app-mobile',
-    name: 'MyCarAppMobile',
+    name: 'My Car App Mobile',
     description: { 
-      es: 'Versión móvil nativa para el sistema de gestión de vehículos.', 
-      en: 'Native mobile version for the vehicle management system.' 
+      es: 'App Android nativa para explorar un catálogo de vehículos por marca, simular un alquiler con validaciones y guardar el historial en una base SQLite local.', 
+      en: 'Native Android app to browse a vehicle catalog by brand, simulate a rental with validations and store the history in a local SQLite database.' 
     },
     technologies: ['java-android'],
     repo: 'https://github.com/RibZu/MyCarAppMobile',
@@ -60,10 +60,10 @@ export const projects = [
   },
   {
     id: 'red-social-artesanos',
-    name: 'RedSocialArtesanos',
+    name: 'Red Social Artesanos',
     description: { 
-      es: 'Comunidad en línea para artesanos locales, permitiendo compartir productos y conectar con clientes.', 
-      en: 'Online community for local artisans, enabling product sharing and customer connections.' 
+      es: 'Red social para artesanos en PHP puro: álbumes de fotos con privacidad, seguimiento con aprobación, likes y comentarios vía AJAX, y un feed ordenado por popularidad.', 
+      en: 'Social network for artisans in plain PHP: photo albums with privacy settings, follow requests with approval, likes and comments via AJAX, and a popularity-ranked feed.' 
     },
     technologies: ['php', 'mysql', 'javascript'],
     repo: 'https://github.com/RibZu/RedSocialArtesanos',
@@ -74,10 +74,10 @@ export const projects = [
   },
   {
     id: 'noticias-institucionales',
-    name: 'NoticiasInstitucionales',
+    name: 'Noticias Institucionales',
     description: { 
-      es: 'Portal de noticias corporativo para centralizar comunicaciones internas.', 
-      en: 'Corporate news portal to centralize internal communications.' 
+      es: 'Sistema editorial de noticias institucionales en PHP y MySQL con flujo Borrador → Validación → Publicación, tres roles (editor, validador, administrador) y expiración automática.', 
+      en: 'Editorial system for institutional news in PHP and MySQL with a Draft → Review → Published workflow, three roles (editor, reviewer, admin) and automatic expiration.' 
     },
     technologies: ['php', 'mysql'],
     repo: 'https://github.com/RibZu/NoticiasInstitucionales',
@@ -85,10 +85,10 @@ export const projects = [
   },
   {
     id: 'tyh-noticias',
-    name: 'TyH-Noticias',
+    name: 'TyH Noticias',
     description: { 
-      es: 'Sistema de gestión de contenido periodístico con panel de administración.', 
-      en: 'Journalistic content management system with an administration dashboard.' 
+      es: 'Sistema de gestión, validación y publicación de noticias con MVC manual en PHP: portal público con búsqueda y destacadas, panel por roles y auditoría de cada cambio.', 
+      en: 'News management, review and publishing system with a hand-built PHP MVC: public portal with search and featured items, role-based dashboard and an audit trail of every change.' 
     },
     technologies: ['php', 'mysql'],
     repo: 'https://github.com/RibZu/TyH-Noticias',

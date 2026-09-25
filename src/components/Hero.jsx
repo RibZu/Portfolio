@@ -18,13 +18,13 @@ export default function Hero() {
             {t(profile.summary)}
           </p>
           <div className={styles.actions}>
-            <a href="#contact" className={`${styles.btn} ${styles.btnPrimary}`}>
+            <a href="#contact" className={styles.btn}>
               {t(ui.navContact)}
             </a>
-            <a href={profile.github} className={`${styles.btn} ${styles.btnSecondary}`} target="_blank" rel="noopener noreferrer">
+            <a href={profile.github} className={styles.btn} target="_blank" rel="noopener noreferrer">
               GitHub <span className={styles.visuallyHidden}>{t(ui.externalLink)}</span>
             </a>
-            <a href={profile.linkedin} className={`${styles.btn} ${styles.btnSecondary}`} target="_blank" rel="noopener noreferrer">
+            <a href={profile.linkedin} className={styles.btn} target="_blank" rel="noopener noreferrer">
               LinkedIn <span className={styles.visuallyHidden}>{t(ui.externalLink)}</span>
             </a>
           </div>
