@@ -1,120 +1,610 @@
-%PDF-1.4
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%PDF-1.3
+%âãÏÓ
 1 0 obj
 <<
-/F1 2 0 R /F2 3 0 R /F3 4 0 R
+/PageMode /UseNone
+/Pages 2 0 R
+/Type /Catalog
 >>
 endobj
 2 0 obj
 <<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+/Count 1
+/Kids [ 3 0 R ]
+/Type /Pages
 >>
 endobj
 3 0 obj
 <<
-/BaseFont /Times-Roman /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R ]
+/Contents 9 0 R
+/MediaBox [ 0 0 612 792 ]
+/Parent 2 0 R
+/Resources <<
+/Font 10 0 R
+/ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
 >>
 endobj
 4 0 obj
 <<
-/BaseFont /Times-Bold /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+/A <<
+/S /URI
+/Type /Action
+/URI (https\072\057\057simonriberi\056dev)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 110.2165 694.2 179.5715 707.4 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 5 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://simonriberi.dev)
->> /Border [ 0 0 0 ] /Rect [ 110.2165 694.2 179.5715 707.4 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057github\056com\057RibZu)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 229.7535 694.2 310.7355 707.4 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 6 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://github.com/RibZu)
->> /Border [ 0 0 0 ] /Rect [ 229.7535 694.2 310.7355 707.4 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057www\056linkedin\056com\057in\057simon\055riberi\0555a28bb238\057)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 368.8705 694.2 551.2835 707.4 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 7 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://www.linkedin.com/in/simon-riberi-5a28bb238/)
->> /Border [ 0 0 0 ] /Rect [ 368.8705 694.2 551.2835 707.4 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057lacis\056unsl\056edu\056ar\057)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 52 623.9 149.394 635.3 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 8 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (https://lacis.unsl.edu.ar/)
->> /Border [ 0 0 0 ] /Rect [ 52 623.9 149.394 635.3 ] /Subtype /Link /Type /Annot
+/S /URI
+/Type /Action
+/URI (https\072\057\057simonriberi\056dev)
+>>
+/Border [ 0 0 0 ]
+/Rect [ 214.1155 486.8 274.013 498.2 ]
+/Subtype /Link
+/Type /Annot
 >>
 endobj
 9 0 obj
 <<
-/A <<
-/S /URI /Type /Action /URI (https://simonriberi.dev)
->> /Border [ 0 0 0 ] /Rect [ 214.1155 486.8 274.013 498.2 ] /Subtype /Link /Type /Annot
+/Length 9260
 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52 734 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 168.99 0 Td (Sim\363n Riberi Zunino) Tj T* -168.99 0 Td ET
+Q
+Q
+q
+1 0 0 1 52 728 cm
+Q
+q
+1 0 0 1 52 726.9 cm
+q
+1.1 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 707.4 cm
+q
+BT 1 0 0 1 0 2.5 Tm 148.884 0 Td 13.5 TL /F3 11 Tf 0 0 0 rg (Correo electr\363nico:) Tj /F2 11 Tf ( simonriberi@outlook.com) Tj T* -148.884 0 Td ET
+Q
+Q
+q
+1 0 0 1 52 693.9 cm
+q
+0 0 .933333 RG
+n 58.2165 1.125 m 127.5715 1.125 l S
+n 177.7535 1.125 m 258.7355 1.125 l S
+n 316.8705 1.125 m 499.2835 1.125 l S
+BT 1 0 0 1 0 2.5 Tm 8.7165 0 Td 13.5 TL /F3 11 Tf 0 0 0 rg (Sitio web:) Tj /F2 11 Tf ( ) Tj 0 0 .933333 rg (simonriberi.dev) Tj 0 0 0 rg ( | ) Tj /F3 11 Tf (GitHub:) Tj /F2 11 Tf ( ) Tj 0 0 .933333 rg (github.com/RibZu) Tj 0 0 0 rg ( | ) Tj /F3 11 Tf (LinkedIn:) Tj /F2 11 Tf ( ) Tj 0 0 .933333 rg (linkedin.com/in/simon-riberi-5a28bb238/) Tj T* -8.7165 0 Td ET
+Q
+Q
+q
+1 0 0 1 52 686.9 cm
+Q
+q
+1 0 0 1 52 685.8 cm
+q
+1.1 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 665.8 cm
+q
+0 0 0 rg
+0 0 0 RG
+n 0 1.1875 m 128.0475 1.1875 l S
+BT 1 0 0 1 0 2.5 Tm /F3 10.5 Tf 13 TL (EXPERIENCIA LABORAL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 664 cm
+q
+.8 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 648.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2024 \226 Actualidad) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 623.7 cm
+q
+0 0 .933333 RG
+n 0 .9125 m 97.394 .9125 l S
+BT 1 0 0 1 0 13.7 Tm 11.6 TL /F3 9.5 Tf 0 0 0 rg (DESARROLLADOR WEB \(Pr\341ctica T\351cnica Supervisada\) | LaCiS \226 Universidad Nacional de San Luis \226) Tj T* 0 0 .933333 rg (https://lacis.unsl.edu.ar/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 599 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 599 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm /F2 9.5 Tf 11.6 TL (Dise\361o, desarrollo y mantenimiento del sitio web oficial del laboratorio, aplicando principios de dise\361o web e ingenier\355a de) Tj T* (software.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 587.4 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 587.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Realizaci\363n de la pasant\355a como Pr\341ctica T\351cnica Supervisada final de la Tecnicatura en Web.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 575.8 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 575.8 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Trabajo bajo la metodolog\355a Scrum para la gesti\363n \341gil del proyecto.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 559.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2024 \226 Actualidad) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 546.1 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F3 9.5 Tf 11.6 TL (DESARROLLADOR WEB FREELANCE | Independiente) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 521.4 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 521.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm /F2 9.5 Tf 11.6 TL (Dise\361o, desarrollo y puesta en producci\363n de sitios y aplicaciones web a medida para clientes, utilizando JavaScript,) Tj T* (TypeScript, React, Node.js, PHP y WordPress.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 498.2 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 498.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm /F2 9.5 Tf 11.6 TL (Relevamiento de requerimientos y comunicaci\363n directa con clientes, acompa\361ando el proyecto desde el an\341lisis hasta la) Tj T* (entrega y el mantenimiento.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 486.6 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 486.6 cm
+q
+0 0 .933333 RG
+n 140.1155 .9125 m 200.013 .9125 l S
+BT 1 0 0 1 0 2.1 Tm 11.6 TL /F2 9.5 Tf 0 0 0 rg (Portfolio de proyectos disponible en ) Tj 0 0 .933333 rg (simonriberi.dev) Tj 0 0 0 rg (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 470 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2024 \226 Actualidad) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 456.9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F3 9.5 Tf 11.6 TL (ASISTENTE DE INFRAESTRUCTURA IT Y REDES | Estaci\363n de Servicio Pela Hnos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 443.8 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 443.8 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Brind\351 soporte t\351cnico y gesti\363n de infraestructura IT en un entorno comercial de alta demanda.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 432.2 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 432.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Configur\351 y mantuve redes LAN/WAN, hardware, antenas y terminales POS.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 415.6 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2024 \226 Actualidad) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 402.5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F3 9.5 Tf 11.6 TL (SOPORTE T\311CNICO DE HARDWARE Y SOFTWARE | Independiente) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 389.4 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 389.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Brind\351 soporte t\351cnico aut\363nomo: diagn\363stico, reparaci\363n y mantenimiento preventivo de hardware y software.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 377.8 cm
+BT /F1 9.5 Tf 11.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm (\177) Tj T* ET
+Q
+q
+1 0 0 1 74 377.8 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Instal\351 sistemas operativos, configur\351 redes y atend\355 directamente a clientes.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 357.8 cm
+q
+0 0 0 rg
+0 0 0 RG
+n 0 1.1875 m 181.734 1.1875 l S
+BT 1 0 0 1 0 2.5 Tm /F3 10.5 Tf 13 TL (CONOCIMIENTOS TECNOL\323GICOS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 356 cm
+q
+.8 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 340.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Lenguajes de Programaci\363n: JavaScript, Java, C, PHP, Python y Golang.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 327.3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Frameworks y Librer\355as: TypeScript, Node.js, React, CodeIgniter.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 302.6 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm /F2 9.5 Tf 11.6 TL (Dise\361o y Arquitectura de Sistemas: An\341lisis de requerimientos y diagramaci\363n \(UML, casos de uso, bases de datos y otros modelos) Tj T* (de sistemas\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 289.5 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Herramientas y DevOps: Docker, Git.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 276.4 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (Redes e Infraestructura: Configuraci\363n y mantenimiento de redes LAN/WAN, administraci\363n de TCP/IP, DNS y DHCP.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 256.4 cm
+q
+0 0 0 rg
+0 0 0 RG
+n 0 1.1875 m 136.185 1.1875 l S
+BT 1 0 0 1 0 2.5 Tm /F3 10.5 Tf 13 TL (FORMACI\323N ACAD\311MICA) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 254.6 cm
+q
+.8 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 239 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2022 \226 2026) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 225.9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F3 9.5 Tf 11.6 TL (TECNICATURA UNIVERSITARIA EN WEB | Universidad Nacional de San Luis \(UNSL\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 189.6 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 25.3 Tm /F2 9.5 Tf 11.6 TL -0.051361 Tw (Graduado. Formaci\363n integral en desarrollo web y de software: programaci\363n front-end y back-end, dise\361o de bases de datos, an\341lisis) Tj T* 0 Tw (y dise\361o de sistemas e ingenier\355a de software aplicada a proyectos reales. Desarrollo de habilidades de trabajo en equipo con) Tj T* (metodolog\355as \341giles, gesti\363n de proyectos, resoluci\363n de problemas y comunicaci\363n efectiva.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 173 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2013 \226 2018) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 159.9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F3 9.5 Tf 11.6 TL (T\315TULO SECUNDARIO \226 Bachiller en Administraci\363n | Escuela Normal \223Juan Pascual Pringles\224, UNSL) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 139.9 cm
+q
+0 0 0 rg
+0 0 0 RG
+n 0 1.1875 m 99.1725 1.1875 l S
+BT 1 0 0 1 0 2.5 Tm /F3 10.5 Tf 13 TL (CERTIFICACIONES) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 138.1 cm
+q
+.8 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 110.9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 13.7 Tm /F2 9.5 Tf 11.6 TL (2024 | Diplomatura de Professional Backend Developer \(202 hs\) | Universidad Tecnol\363gica Nacional \(UTN\) \226 Facultad Regional) Tj T* (Buenos Aires) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 97.8 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2024 | Curso de Programador Web Avanzado \(105 hs\) | Universidad Tecnol\363gica Nacional \(UTN\) \226 Facultad Regional Buenos Aires) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 84.7 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2024 | Desarrollo Web con PHP y WordPress | Universidad Tecnol\363gica Nacional \(UTN\) \226 Facultad Regional Buenos Aires) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 71.6 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2.1 Tm /F2 9.5 Tf 11.6 TL (2018 | Certificaci\363n de Ingl\351s B2 \226 First Certificate in English \(FCE\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 51.6 cm
+q
+0 0 0 rg
+0 0 0 RG
+n 0 1.1875 m 47.25 1.1875 l S
+BT 1 0 0 1 0 2.5 Tm /F3 10.5 Tf 13 TL (IDIOMAS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52 49.8 cm
+q
+.8 w
+1 J
+0 0 0 RG
+n 0 0 m 508 0 l S
+Q
+Q
+q
+1 0 0 1 52 34.2 cm
+q
+BT 1 0 0 1 0 2.1 Tm 11.6 TL /F3 9.5 Tf 0 0 0 rg (ESPA\321OL) Tj /F2 9.5 Tf ( Nativo | ) Tj /F3 9.5 Tf (INGL\311S) Tj /F2 9.5 Tf ( Intermedio Alto \(B2, FCE\)) Tj T* ET
+Q
+Q
+ 
+
+endstream
 endobj
 10 0 obj
 <<
-/Annots [ 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R ] /Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 
-  /Trans <<
-
->> /Type /Page
+/F1 11 0 R
+/F2 12 0 R
+/F3 13 0 R
 >>
 endobj
 11 0 obj
 <<
-/PageMode /UseNone /Pages 13 0 R /Type /Catalog
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 12 0 obj
 <<
-/Author (Sim\363n Riberi Zunino) /CreationDate (D:20260924190043-03'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260924190043-03'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (\(unspecified\)) /Title (CV \205 Sim\363n Riberi Zunino) /Trapped /False
+/BaseFont /Times-Roman
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 13 0 obj
 <<
-/Count 1 /Kids [ 10 0 R ] /Type /Pages
+/BaseFont /Times-Bold
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
 >>
 endobj
 14 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 3119
+/Author (Sim\363n Riberi Zunino)
+/CreationDate (D\07220260924190043\05503\04700\047)
+/Creator (\050unspecified\051)
+/Keywords ()
+/ModDate (D\07220260924190043\05503\04700\047)
+/Producer (ReportLab PDF Library \055 \050opensource\051)
+/Subject (\050unspecified\051)
+/Title (CV \205 Sim\363n Riberi Zunino)
+/Trapped /False
 >>
-stream
-GauHNgN)#j&q/)-bTf.0a@JWgph@o<[Zr&P!IV3!0#%hC(f)>4A0a1s<'GbTO"Q6='nYJa<ONahXk.Zu?IM:i?22gtmr2"Bjas"0ksRJOih#?sX[a-Oi\0/9H)$]h/VD\f%m!'^=1-0#)]5I(1VoG9b[M-YMmF78%__=EK)rVj7&2X%lT;Fk-=k,_9QK]"T(#.\-&YQ0nK7>)fb`6=0Dt1>D`G9+?>Eme'`6<9SU?-8n&l`sY2:Mi@83i+"+Of95;6s+ek3i'lnL=)/^d?`dg&@I/`"@b&X[8F>t6\$/4dep;DLO?bed%'4*`5,P]_dSdChnF^(uQ)!.7`=s0Z$/*c%HODin_9GmK<,^oWL72Jlj]^VXC%d1!^,&O=7<^i\D:29XRO#/hW-\nu5kASui40[)GWh-Qu8f,VE7mF<-a1rD&;]aeHT;rJ48$JCq^>`c.*\IXm=B\J4>)q\j:H`[)YZ]X^PS>KJhF3V%\r7K\(4F>/9GS'&rT`=(;T74_BcR]Ed,8Z/9GFk`ZG]Kt2GurYicD$'">T0J\?FrK:`e.UUPchdQDJ@Bh6DEA@-`CO'B08lRfS+B,>.8-K<QfG)Tg7r'1[p<Zrm:38T),e/++&Q37dfAKk)Lq7%iX1UK+rKPJjhgmCLo.$J1CA1:i94`qJ)cp(V&hW0`&]sZ^f#tU/C5O%9'U*#u:D#K[RZebX&H1\-JL`;]tt%Rm?noI;M,fkg/)<Cbcp>_o[jboIn<lB+!/;e&.-"PUu5r9+M\`SECh<+*gI'HM81;GsjeZ09!J:p`ktO>"-Ffj<C9PM&;Z0KT'rCWa:t(5J$JSQ>P'.oCEe'VHTReZ,WMCU[l&,+`!b+[`gd:]W8D\pkUCn3d8AG44A*q[sQZdcQ.*bbFt+@nrs/rlf&<Q8?%gtNWj\PCRScbiG6`%9Yd\G=M//s,49`t'k/nSku('@$-?T[\qpI`,SFW4GnTZW(Fe>^<K!g7N::?]F#,d7bG*@WZE07Iqs5hu9P]@1.C7VZJm%sIc`hNXPJ_"P+B6(+?PGLB/<;75ckN]89Ec1GjQHM7mWn&Z0Rgjfq^e(uY_7C7bBA!oP/pr7*IFD*O%!\)l&pK.7/[2)egqJsLrHC0Aff*B%;:<\n8cLrXFq25>4KJc2GuYgfF[E]=HKig&G'&<5"p.D>3:;#m?-)PbkFWqf^jZtJg=eEQ:)R@XE=o*ISr9J9.nce^QVt^3Lm;DB/n9e%iZ[eGUA,."e-VrZW%MA\kE53;E.5b.qI'aP%PcP%XI5#IAGdlI$:,OUp>7!Yd06RKSJu//0^s>Jt^Y_.BN/=aCm&+R^Te-Dr;=Iof>(ae";6`$oI`(XkB.6p*Bs#<AYhc^cZn:i%0HA'&j07.;9nrU"b=]JLNDp!Je]#o0NgZ0Haks6CrRtG`"5XZ%dNL>>\K6HLBjUG%a1moj<]clIc]H'><#JF<)t7Pt3X@?*+K\m2;0eY.,2q`kG!3$CT_.R&cFL!),*TDFD@.0gi]?61)-KBQsIfjn5^heuCZ4.*nFho7]D8pgiTP@!jhQrV9oGlRd!e/dW<Ss((6o/HYnHi)pLiQt(":/g+'sg#47i5Ddp^q2/=ZT)Af!00pIER.X$#2W-!BA<d?a@Vk,=#_g^?UsL=W;!!0l#[A`Q#Y(%P"GSdtV&1F6c;75$fL<.f*Rd!)ac8ceRf*A24H\Fj<A#"OKaQ'HOj8K+i6!l?s6,KhJ9GIV1(ad")29?OAPB7(2*o"AADV4<DDh7JFb?NKf>5pfANlMWAe6F7&p<"L#MoTYk/Nr$5IrWm@V%a6>,]JK:^a-VGX_:1ci1O$KBASZ$4tQ#^nc(;i(&Tg&>Y"jW!Fl]q!mp\OmEZ$pnQj/b'0N5;7@"`[U5.glIetK.nG17irUp+Ae=\c&TEMuBIY;!YSg)&"G*KQ?k?kL;?1KS(p]E*m9j&ngO5qkioh:]:Og&Ki_@E+0DH)DQC,n<_Y;'6d@G!=fAQ]#p<E8;:bFIg#b:1j,F5EOqMD2pmSo(/V!H/D0:J>/4eE<^#uC?hPW]:ofP;)JACV1'@;G"^qn%IYYcgBB7Lp@+V(Ah,klkdYj'!1a.bTI#_(+D/XmK<pNbdb*UM^@A2-57K@C7<2@F?gbqLZ3dd<S:>+sSp0-[2-9%jM>\RMHWo49_0Ud^2!.L_caR-K4D3b`"toCKP]a.2KXEgM47W%#uV-ICjEbP_ELHl"e?]-Q=a].)O;(Srmf[[4cCk?VmUb/msbsG1=J7WNu!!<#Y/#@N%P`"ghf=X=_*LGl[h,*7*$>)fOGJMm[KH1TY'&D;.(IoQiB_I;lk"M.B:bcQ-Iir=F3kqo3s99/smEO422UAVO('%!_'Hma876<oZ`R!.bd?\)ZCrrbNW,gf`PJJ#qoIhiB1NG&G@ldG<Qc4mES+m=NL_DEA9G41L;RE:.,P=44XF1s0MX1iao'2V^;P.E$^plF9](^nSZ/W[X1#rW9954%+'A7?Y?:S-U.%2#N;nB8qKh%,Rh?ZfVF9>9h/44me91POa1=ZeeM]jG53pi9a691=WQIO@!fA;D(VFoOb@tX=U9#ahWXYK9q.b-F)Cd>$;Zgn<1P5`Mcj,)3p(=%sQmHD08P`'bK"\N8foc(Cf1a2.[YM#;60EG?WV&#,_\+Y^j-k*DOW1pMS#=nGPq`l6Ql]GT8MrpptetL\K7Oa/eD@r@l5Wk5--M@S5S_1e^3[XoNBbd5rQi,HXG&qaMR&^qi:bD;u<;o_dAd\:Su"K#uY`Pu?o%fG>*k%SNGlQ%Z_XI4%CrM8boa=o`*`4\O7UJDbN5A'@9jK[^I"(MF)/ObZnae^Gcq/>%h;:Mkecp6rmL[h`K;X\SbNL,iM1,>^QSot$0YbFBjiOY2IOZjj:VkrQPcf?7_TRK>5W'!(uLIAFtDp]OgP]@QGWOW8/+dqaECGD^5H,"%9mkkIO,p!6fPlRsXdkRO1"P8V,R(0".,XjhJE-'r36^>^om[XBsU"N6(54FI36XusH^EE`8:4Nn-q><@ZTJmgA/i3mYlDbt`QM>+$M(t;k^4n*$d5G,M0f_!:arm(d[T+6+!]$ND8K0o5\(gi>#gs,Qu"US4d=MtA_isZ%TdPrJ,:4^(R(Z?YRdJ~>endstream
 endobj
 xref
 0 15
 0000000000 65535 f 
-0000000061 00000 n 
-0000000112 00000 n 
-0000000219 00000 n 
-0000000328 00000 n 
-0000000436 00000 n 
-0000000605 00000 n 
-0000000775 00000 n 
-0000000972 00000 n 
-0000001137 00000 n 
-0000001305 00000 n 
-0000001543 00000 n 
-0000001613 00000 n 
-0000001920 00000 n 
-0000001981 00000 n 
+0000000015 00000 n 
+0000000083 00000 n 
+0000000142 00000 n 
+0000000374 00000 n 
+0000000555 00000 n 
+0000000740 00000 n 
+0000000967 00000 n 
+0000001153 00000 n 
+0000001333 00000 n 
+0000010645 00000 n 
+0000010700 00000 n 
+0000010808 00000 n 
+0000010918 00000 n 
+0000011027 00000 n 
 trailer
 <<
-/ID 
-[<d618626f181e23aa92f95796789cb328><d618626f181e23aa92f95796789cb328>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 12 0 R
-/Root 11 0 R
 /Size 15
+/Root 1 0 R
+/Info 14 0 R
+/ID [ <d618626f181e23aa92f95796789cb328> <d618626f181e23aa92f95796789cb328> ]
 >>
 startxref
-5192
+11370
 %%EOF

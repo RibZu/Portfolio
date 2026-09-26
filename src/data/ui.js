@@ -37,6 +37,7 @@ export const ui = {
   certificationsTitle: { es: "Certificaciones", en: "Certifications" },
   linkedinFull: { es: "Si querés saber más, buscame en LinkedIn", en: "To know more, find me on LinkedIn" },
   cvView: { es: "Ver CV", en: "View CV" },
+  cvDownload: { es: "Descargar CV", en: "Download CV" },
 
   contactEmail: { es: "Email", en: "Email" },
 };

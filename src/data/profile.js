@@ -5,12 +5,12 @@ export const profile = {
     es: "Desarrollador Web graduado en la UNSL. Construyo aplicaciones web de alto rendimiento enfocadas en resolver problemas reales.", 
     en: "Web Developer graduated from UNSL. I build high-performance web applications focused on solving real problems." 
   },
-  email: "simonriberizunino@gmail.com",
+  email: "simonriberi@outlook.com",
   github: "https://github.com/RibZu",
   linkedin: "https://www.linkedin.com/in/simon-riberi-5a28bb238/",
   cv: [
-    { id: "es", label: "ES", name: { es: "en español", en: "in Spanish" }, href: "/cv/CV_Simon_Riberi_ES.pdf" },
-    { id: "en", label: "EN", name: { es: "en inglés", en: "in English" }, href: "/cv/CV_Simon_Riberi_EN.pdf" },
+    { id: "es", label: "ES", name: { es: "en español", en: "in Spanish" }, href: "/cv/CV_Simon_Riberi_ES.pdf", file: "CV_Simon_Riberi_ES.pdf" },
+    { id: "en", label: "EN", name: { es: "en inglés", en: "in English" }, href: "/cv/CV_Simon_Riberi_EN.pdf", file: "CV_Simon_Riberi_EN.pdf" },
   ],
   spokenLanguages: [
     { name: { es: "Español", en: "Spanish" }, level: { es: "Nativo", en: "Native" } },

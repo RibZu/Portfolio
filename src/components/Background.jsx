@@ -54,12 +54,22 @@ export default function Background() {
                 <span className="sr-only"> {t(ui.externalLink)}</span>
               </a>
               <div className={styles.cvGroup}>
-                {profile.cv.map((cv) => (
-                  <a key={cv.id} href={cv.href} target="_blank" rel="noopener noreferrer" className={styles.cvBtn}>
-                    {t(ui.cvView)} · {cv.label}
-                    <span className="sr-only"> {t(cv.name)}, PDF {t(ui.externalLink)}</span>
-                  </a>
-                ))}
+                {profile.cv.map((cv) => {
+                  const downloadLabel = `${t(ui.cvDownload)} ${t(cv.name)} (PDF)`;
+                  return (
+                    <div key={cv.id} className={styles.cvPair}>
+                      <a href={cv.href} target="_blank" rel="noopener noreferrer" className={styles.cvBtn}>
+                        {t(ui.cvView)} · {cv.label}
+                        <span className="sr-only"> {t(cv.name)}, PDF {t(ui.externalLink)}</span>
+                      </a>
+                      <a href={cv.href} download={cv.file} className={styles.cvDownload} aria-label={downloadLabel} title={downloadLabel}>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+                          <path d="M12 4v11M7 10l5 5 5-5M5 20h14" />
+                        </svg>
+                      </a>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

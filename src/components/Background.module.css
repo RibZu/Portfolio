@@ -145,7 +145,18 @@
 /* Ver CV: dos botones rectangulares con fondo azul, como la tarjeta de contacto */
 .cvGroup {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-2);
+}
+
+/* Cada CV es un par unido: "Ver" (pestaña nueva) + descarga discreta al costado */
+.cvPair {
+  display: flex;
+}
+
+.cvPair .cvBtn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .cvBtn {
@@ -165,11 +176,36 @@
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+.cvDownload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 48px;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-left: 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
 .cvBtn:hover,
-.cvBtn:focus-visible {
+.cvBtn:focus-visible,
+.cvDownload:hover,
+.cvDownload:focus-visible {
   background: var(--ink);
   border-color: var(--ink);
   color: var(--paper);
+}
+
+/* El anillo de foco no debe quedar tapado por el botón vecino */
+.cvBtn:focus-visible,
+.cvDownload:focus-visible {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {
@@ -184,8 +220,14 @@
     align-self: stretch;
   }
 
+  /* Cada par se estira; si no entran los dos en una fila, cada uno ocupa la suya */
+  .cvPair {
+    flex: 1 1 9.5rem;
+  }
+
   .cvBtn {
-    flex: 1 1 0;
+    flex: 1 1 auto;
+    min-width: 0;
     padding-inline: 0.5rem;
     font-size: 1rem;
   }

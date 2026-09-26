@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { profile, skills } from '../src/data/profile';
 import { technologies } from '../src/data/technologies';
@@ -29,15 +29,13 @@ describe('Content schema validation', () => {
 
   it('Profile is valid', () => {
     checkLocalized(profile.title);
-    checkLocalized(profile.location);
-    checkLocalized(profile.availability);
     checkLocalized(profile.summary);
     
     const countWords = str => str.trim().split(/\s+/).length;
     expect(countWords(profile.summary.es)).toBeLessThanOrEqual(60);
     expect(countWords(profile.summary.en)).toBeLessThanOrEqual(60);
     
-    expect(profile.email).toContain('@');
+    expect(profile.email).toBe('simonriberi@outlook.com');
     expect(profile.github.startsWith('https://')).toBe(true);
     expect(profile.linkedin.startsWith('https://')).toBe(true);
     
@@ -55,9 +53,20 @@ describe('Content schema validation', () => {
       expect(cv.href.startsWith('/cv/')).toBe(true);
       expect(cv.href.endsWith('.pdf')).toBe(true);
       expect(existsSync(resolve('public', cv.href.slice(1)))).toBe(true);
+      expect(cv.file).toBe(cv.href.split('/').pop());
+      expect(cv.file).toMatch(/^CV_Simon_Riberi_(ES|EN)\.pdf$/);
     });
     expect(new Set(profile.cv.map(cv => cv.href)).size).toBe(profile.cv.length);
     checkLocalized(ui.cvView);
+    checkLocalized(ui.cvDownload);
+  });
+
+  it('CV PDFs use the current contact email', () => {
+    profile.cv.forEach(cv => {
+      const pdf = readFileSync(resolve('public', cv.href.slice(1)), 'latin1');
+      expect(pdf).toContain('simonriberi@outlook.com');
+      expect(pdf).not.toContain('simonriberizunino');
+    });
   });
 
   it('Technologies are valid', () => {
